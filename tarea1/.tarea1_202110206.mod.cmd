@@ -1,0 +1,1 @@
+savedcmd_/home/julio/Escritorio/LAB_SOPES1/SO1_2S2024_202110206/tarea1/tarea1_202110206.mod := printf '%s\n'   tarea1_202110206.o | awk '!x[$$0]++ { print("/home/julio/Escritorio/LAB_SOPES1/SO1_2S2024_202110206/tarea1/"$$0) }' > /home/julio/Escritorio/LAB_SOPES1/SO1_2S2024_202110206/tarea1/tarea1_202110206.mod
