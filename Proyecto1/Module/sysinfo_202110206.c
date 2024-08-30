@@ -121,9 +121,9 @@ static int sysinfo_show(struct seq_file *m, void *v) {
     seq_printf(m, "{\n");
     seq_printf(m, "  \"RAMmemory\": [\n");
     seq_printf(m, "    {\n");
-    seq_printf(m, "      \"TotalRAM\": \"%lu MB\",\n", totalram_mb);
-    seq_printf(m, "      \"FreeRAM\": \"%lu MB\",\n", freeram_mb);
-    seq_printf(m, "      \"UsedRAM\": \"%lu MB\"\n", usedram_mb);
+    seq_printf(m, "      \"TotalRAM\": %lu,\n", totalram_mb);
+    seq_printf(m, "      \"FreeRAM\": %lu,\n", freeram_mb);
+    seq_printf(m, "      \"UsedRAM\": %lu\n", usedram_mb);
     seq_printf(m, "    }\n");
     seq_printf(m, "  ],\n");
     seq_printf(m, "  \"Processes\": [\n");
@@ -156,10 +156,10 @@ static int sysinfo_show(struct seq_file *m, void *v) {
             seq_printf(m, "      \"PID\": %d,\n", task->pid);
             seq_printf(m, "      \"Name\": \"%s\",\n", task->comm);
             seq_printf(m, "      \"Cmdline\": \"%s\",\n", cmdline ? cmdline : "N/A");
-            seq_printf(m, "      \"Vsz\": \"%lu KB\",\n", vsz);
-            seq_printf(m, "      \"Rss\": \"%lu KB\",\n", rss);
-            seq_printf(m, "      \"MemoryUsage\": %lu.%02lu%%,\n", mem_usage / 100, mem_usage % 100);
-            seq_printf(m, "      \"CPUUsage\": %lu.%02lu%%\n", cpu_usage / 100, cpu_usage % 100);
+            seq_printf(m, "      \"Vsz\": %lu,\n", vsz);
+            seq_printf(m, "      \"Rss\": %lu,\n", rss);
+            seq_printf(m, "      \"MemoryUsage\": %lu.%02lu,\n", mem_usage / 100, mem_usage % 100);
+            seq_printf(m, "      \"CPUUsage\": %lu.%02lu\n", cpu_usage / 100, cpu_usage % 100);
             seq_printf(m, "    }");
 
             kfree(cmdline);
