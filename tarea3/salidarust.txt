@@ -1,0 +1,14 @@
+*-*-*-*-*-*-*-*-*-*-*-*-*-Bajo consumo*-*-*-*-*-*-*-*-*-*-*-*-*-
+PID: 21576, Name: containerd-shim, container ID: b8e65852d324ab9afdf52cc67bfa83689d2ccbff0f6ec598b2d37977a0db51a0, Vsz : 1236472, Rss : 11392 , Memory Usage: 0.57, CPU Usage: 0.02
+PID: 21431, Name: containerd-shim, container ID: 2d382c076a3317273f484b8cc7472d1c9610b2afc60765e1663ea8268246ab84, Vsz : 1236472, Rss : 11500 , Memory Usage: 0.58, CPU Usage: 0.02
+PID: 21051, Name: containerd-shim, container ID: 7daefe8a3c235062b6abe67a9038a0190aa1afb1cf5245c8651be18c6f244ed9, Vsz : 1236216, Rss : 10728 , Memory Usage: 0.54, CPU Usage: 0.04
+PID: 21262, Name: containerd-shim, container ID: 162081c071e9d2a9ae22c7d2d93fb8dc98b2ab766e36c216bc0e22a445c0d36c, Vsz : 1236472, Rss : 11108 , Memory Usage: 0.56, CPU Usage: 0.04
+PID: 21329, Name: containerd-shim, container ID: 2999cc3b8882ca32c5fbe9b2495cdd0635befb31010165bbab216be9bc0cee04, Vsz : 1236472, Rss : 11256 , Memory Usage: 0.56, CPU Usage: 0.04
+------------------------------
+*-*-*-*-*-*-*-*-*-*-*-*-*-Alto consumo*-*-*-*-*-*-*-*-*-*-*-*-*-
+PID: 21192, Name: containerd-shim, Icontainer ID 624d9faafcceae08a7824626ca39865af116fecabc085e2afb5c938697467b5d, Vsz : 1236216, Rss : 11264 , Memory Usage: 0.57, CPU Usage: 0.04
+PID: 20964, Name: containerd-shim, Icontainer ID 2c8a66d70b1c9938321cc133f3d65708ea71b153a3545568add129631a5d6c02, Vsz : 1236472, Rss : 11392 , Memory Usage: 0.57, CPU Usage: 0.04
+PID: 21111, Name: containerd-shim, Icontainer ID 2364b0d150e07b674175a227ac9c7ef504793e616b144eceba6ca48749ef04db, Vsz : 1236472, Rss : 11392 , Memory Usage: 0.57, CPU Usage: 0.04
+PID: 21509, Name: containerd-shim, Icontainer ID efa9be71fd49fed3d035c0c54caa09e910313d6a4db1d16cb80a3d2ae97ee197, Vsz : 1236472, Rss : 11392 , Memory Usage: 0.57, CPU Usage: 0.04
+PID: 21663, Name: containerd-shim, Icontainer ID cfdef66d78da230c62baba4c87318e178dbf072c924a7395a7b13cf6af633346, Vsz : 1236472, Rss : 11392 , Memory Usage: 0.57, CPU Usage: 0.06
+------------------------------
