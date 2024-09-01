@@ -52,7 +52,9 @@ Se presentan los procesos de bajo consumo y de alto consumo.
 
 ![alt text](./images/salidarust.png)
 
-![alt text](./images/salida2.png)
+Otra funcionalidad que debe de ser incluida en el proyecto, después de detallar los contenedores tanto de bajo como de alto nivel, se realiza un proceso de matado de contenedores.
+
+![alt text](./images/killcontainer.png)
 
 [Ejemplo de salida en la consola](./salidarust.txt)
 _____
