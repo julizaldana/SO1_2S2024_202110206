@@ -6,7 +6,7 @@ ___
 
 Para la tarea #3 del laboratorio del curso de Sistemas Operativos 1, se realizó un servicio utilizando el lenguaje de programación **Rust**. 
 
-<div style="text-align: center;">
+<div align="center">
     <img src="./images/rust.png" alt="alt text" width="100" style="margin-right: 20px;">
     <img src="./images/dockerlogo.png" width="180">
 </div>
