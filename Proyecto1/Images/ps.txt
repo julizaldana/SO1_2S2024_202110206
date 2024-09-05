@@ -1,0 +1,390 @@
+USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root           1  0.0  0.1 167148 12348 ?        Ss   10:30   0:04 /sbin/init splash
+root           2  0.0  0.0      0     0 ?        S    10:30   0:00 [kthreadd]
+root           3  0.0  0.0      0     0 ?        S    10:30   0:00 [pool_workqueue_release]
+root           4  0.0  0.0      0     0 ?        I<   10:30   0:00 [kworker/R-rcu_g]
+root           5  0.0  0.0      0     0 ?        I<   10:30   0:00 [kworker/R-rcu_p]
+root           6  0.0  0.0      0     0 ?        I<   10:30   0:00 [kworker/R-slub_]
+root           7  0.0  0.0      0     0 ?        I<   10:30   0:00 [kworker/R-netns]
+root           9  0.0  0.0      0     0 ?        I<   10:30   0:00 [kworker/0:0H-events_highpri]
+root          12  0.0  0.0      0     0 ?        I<   10:30   0:00 [kworker/R-mm_pe]
+root          13  0.0  0.0      0     0 ?        I    10:30   0:00 [rcu_tasks_kthread]
+root          14  0.0  0.0      0     0 ?        I    10:30   0:00 [rcu_tasks_rude_kthread]
+root          15  0.0  0.0      0     0 ?        I    10:30   0:00 [rcu_tasks_trace_kthread]
+root          16  0.0  0.0      0     0 ?        S    10:30   0:00 [ksoftirqd/0]
+root          17  0.0  0.0      0     0 ?        I    10:30   0:21 [rcu_preempt]
+root          18  0.0  0.0      0     0 ?        S    10:30   0:00 [migration/0]
+root          19  0.0  0.0      0     0 ?        S    10:30   0:00 [idle_inject/0]
+root          20  0.0  0.0      0     0 ?        S    10:30   0:00 [cpuhp/0]
+root          21  0.0  0.0      0     0 ?        S    10:30   0:00 [cpuhp/1]
+root          22  0.0  0.0      0     0 ?        S    10:30   0:00 [idle_inject/1]
+root          23  0.0  0.0      0     0 ?        S    10:30   0:00 [migration/1]
+root          24  0.0  0.0      0     0 ?        S    10:30   0:00 [ksoftirqd/1]
+root          26  0.0  0.0      0     0 ?        I<   10:30   0:00 [kworker/1:0H-events_highpri]
+root          27  0.0  0.0      0     0 ?        S    10:30   0:00 [cpuhp/2]
+root          28  0.0  0.0      0     0 ?        S    10:30   0:00 [idle_inject/2]
+root          29  0.0  0.0      0     0 ?        S    10:30   0:00 [migration/2]
+root          30  0.0  0.0      0     0 ?        S    10:30   0:00 [ksoftirqd/2]
+root          32  0.0  0.0      0     0 ?        I<   10:30   0:00 [kworker/2:0H-events_highpri]
+root          33  0.0  0.0      0     0 ?        S    10:30   0:00 [cpuhp/3]
+root          34  0.0  0.0      0     0 ?        S    10:30   0:00 [idle_inject/3]
+root          35  0.0  0.0      0     0 ?        S    10:30   0:00 [migration/3]
+root          36  0.0  0.0      0     0 ?        S    10:30   0:00 [ksoftirqd/3]
+root          38  0.0  0.0      0     0 ?        I<   10:30   0:00 [kworker/3:0H-events_highpri]
+root          39  0.0  0.0      0     0 ?        S    10:30   0:00 [cpuhp/4]
+root          40  0.0  0.0      0     0 ?        S    10:30   0:00 [idle_inject/4]
+root          41  0.0  0.0      0     0 ?        S    10:30   0:00 [migration/4]
+root          42  0.0  0.0      0     0 ?        S    10:30   0:00 [ksoftirqd/4]
+root          44  0.0  0.0      0     0 ?        I<   10:30   0:00 [kworker/4:0H-events_highpri]
+root          45  0.0  0.0      0     0 ?        S    10:30   0:00 [cpuhp/5]
+root          46  0.0  0.0      0     0 ?        S    10:30   0:00 [idle_inject/5]
+root          47  0.0  0.0      0     0 ?        S    10:30   0:00 [migration/5]
+root          48  0.0  0.0      0     0 ?        S    10:30   0:00 [ksoftirqd/5]
+root          50  0.0  0.0      0     0 ?        I<   10:30   0:00 [kworker/5:0H-events_highpri]
+root          51  0.0  0.0      0     0 ?        S    10:30   0:00 [cpuhp/6]
+root          52  0.0  0.0      0     0 ?        S    10:30   0:00 [idle_inject/6]
+root          53  0.0  0.0      0     0 ?        S    10:30   0:00 [migration/6]
+root          54  0.0  0.0      0     0 ?        S    10:30   0:00 [ksoftirqd/6]
+root          56  0.0  0.0      0     0 ?        I<   10:30   0:00 [kworker/6:0H-events_highpri]
+root          57  0.0  0.0      0     0 ?        S    10:30   0:00 [cpuhp/7]
+root          58  0.0  0.0      0     0 ?        S    10:30   0:00 [idle_inject/7]
+root          59  0.0  0.0      0     0 ?        S    10:30   0:00 [migration/7]
+root          60  0.2  0.0      0     0 ?        S    10:30   1:32 [ksoftirqd/7]
+root          62  0.0  0.0      0     0 ?        I<   10:30   0:00 [kworker/7:0H-events_highpri]
+root          63  0.0  0.0      0     0 ?        S    10:30   0:00 [cpuhp/8]
+root          64  0.0  0.0      0     0 ?        S    10:30   0:00 [idle_inject/8]
+root          65  0.0  0.0      0     0 ?        S    10:30   0:00 [migration/8]
+root          66  0.0  0.0      0     0 ?        S    10:30   0:00 [ksoftirqd/8]
+root          68  0.0  0.0      0     0 ?        I<   10:30   0:00 [kworker/8:0H-events_highpri]
+root          69  0.0  0.0      0     0 ?        S    10:30   0:00 [cpuhp/9]
+root          70  0.0  0.0      0     0 ?        S    10:30   0:00 [idle_inject/9]
+root          71  0.0  0.0      0     0 ?        S    10:30   0:00 [migration/9]
+root          72  0.0  0.0      0     0 ?        S    10:30   0:00 [ksoftirqd/9]
+root          74  0.0  0.0      0     0 ?        I<   10:30   0:00 [kworker/9:0H-events_highpri]
+root          75  0.0  0.0      0     0 ?        S    10:30   0:00 [cpuhp/10]
+root          76  0.0  0.0      0     0 ?        S    10:30   0:00 [idle_inject/10]
+root          77  0.0  0.0      0     0 ?        S    10:30   0:00 [migration/10]
+root          78  0.0  0.0      0     0 ?        S    10:30   0:00 [ksoftirqd/10]
+root          80  0.0  0.0      0     0 ?        I<   10:30   0:00 [kworker/10:0H-events_highpri]
+root          81  0.0  0.0      0     0 ?        S    10:30   0:00 [cpuhp/11]
+root          82  0.0  0.0      0     0 ?        S    10:30   0:00 [idle_inject/11]
+root          83  0.0  0.0      0     0 ?        S    10:30   0:00 [migration/11]
+root          84  0.0  0.0      0     0 ?        S    10:30   0:00 [ksoftirqd/11]
+root          86  0.0  0.0      0     0 ?        I<   10:30   0:00 [kworker/11:0H-events_highpri]
+root          87  0.0  0.0      0     0 ?        S    10:30   0:00 [kdevtmpfs]
+root          88  0.0  0.0      0     0 ?        I<   10:30   0:00 [kworker/R-inet_]
+root          90  0.0  0.0      0     0 ?        S    10:30   0:00 [kauditd]
+root          91  0.0  0.0      0     0 ?        S    10:30   0:00 [khungtaskd]
+root          92  0.0  0.0      0     0 ?        S    10:30   0:00 [oom_reaper]
+root          94  0.0  0.0      0     0 ?        I<   10:30   0:00 [kworker/R-write]
+root          95  0.0  0.0      0     0 ?        S    10:30   0:08 [kcompactd0]
+root          96  0.0  0.0      0     0 ?        SN   10:30   0:00 [ksmd]
+root          98  0.0  0.0      0     0 ?        SN   10:30   0:00 [khugepaged]
+root          99  0.0  0.0      0     0 ?        I<   10:30   0:00 [kworker/R-kinte]
+root         100  0.0  0.0      0     0 ?        I<   10:30   0:00 [kworker/R-kbloc]
+root         101  0.0  0.0      0     0 ?        I<   10:30   0:00 [kworker/R-blkcg]
+root         102  0.0  0.0      0     0 ?        S    10:30   0:00 [irq/9-acpi]
+root         104  0.0  0.0      0     0 ?        I<   10:30   0:00 [kworker/R-tpm_d]
+root         105  0.0  0.0      0     0 ?        I<   10:30   0:00 [kworker/R-ata_s]
+root         106  0.0  0.0      0     0 ?        I<   10:30   0:00 [kworker/R-md]
+root         107  0.0  0.0      0     0 ?        I<   10:30   0:00 [kworker/R-md_bi]
+root         108  0.0  0.0      0     0 ?        I<   10:30   0:00 [kworker/R-edac-]
+root         109  0.0  0.0      0     0 ?        I<   10:30   0:00 [kworker/R-devfr]
+root         110  0.0  0.0      0     0 ?        S    10:30   0:00 [watchdogd]
+root         112  0.0  0.0      0     0 ?        I<   10:30   0:00 [kworker/0:1H-events_highpri]
+root         113  0.0  0.0      0     0 ?        S    10:30   0:02 [kswapd0]
+root         114  0.0  0.0      0     0 ?        S    10:30   0:00 [ecryptfs-kthread]
+root         115  0.0  0.0      0     0 ?        I<   10:30   0:00 [kworker/R-kthro]
+root         116  0.0  0.0      0     0 ?        S    10:30   0:00 [irq/123-aerdrv]
+root         117  0.0  0.0      0     0 ?        S    10:30   0:00 [irq/123-pcie-dpc]
+root         118  0.0  0.0      0     0 ?        S    10:30   0:00 [irq/124-aerdrv]
+root         119  0.0  0.0      0     0 ?        S    10:30   0:00 [irq/124-pcie-dpc]
+root         120  0.0  0.0      0     0 ?        S    10:30   0:00 [irq/125-aerdrv]
+root         121  0.0  0.0      0     0 ?        S    10:30   0:00 [irq/125-pcie-dpc]
+root         122  0.0  0.0      0     0 ?        S    10:30   0:00 [irq/126-aerdrv]
+root         123  0.0  0.0      0     0 ?        S    10:30   0:00 [irq/126-pcie-dpc]
+root         132  0.0  0.0      0     0 ?        I<   10:30   0:00 [kworker/R-acpi_]
+root         133  0.0  0.0      0     0 ?        S    10:30   0:00 [hwrng]
+root         134  0.0  0.0      0     0 ?        I<   10:30   0:00 [kworker/R-mld]
+root         135  0.0  0.0      0     0 ?        I<   10:30   0:00 [kworker/2:1H-kblockd]
+root         136  0.0  0.0      0     0 ?        I<   10:30   0:00 [kworker/R-ipv6_]
+root         143  0.0  0.0      0     0 ?        I<   10:30   0:00 [kworker/R-kstrp]
+root         158  0.0  0.0      0     0 ?        I<   10:30   0:00 [kworker/R-charg]
+root         177  0.0  0.0      0     0 ?        I<   10:30   0:00 [kworker/5:1H-kblockd]
+root         181  0.0  0.0      0     0 ?        I<   10:30   0:00 [kworker/3:1H-events_highpri]
+root         194  0.0  0.0      0     0 ?        I<   10:30   0:01 [kworker/10:1H-events_highpri]
+root         195  0.0  0.0      0     0 ?        I<   10:30   0:02 [kworker/8:1H-events_highpri]
+root         196  0.0  0.0      0     0 ?        I<   10:30   0:00 [kworker/4:1H-events_highpri]
+root         197  0.0  0.0      0     0 ?        I<   10:30   0:01 [kworker/11:1H-kblockd]
+root         198  0.0  0.0      0     0 ?        I<   10:30   0:02 [kworker/9:1H-kblockd]
+root         200  0.0  0.0      0     0 ?        I<   10:30   0:01 [kworker/6:1H-kblockd]
+root         202  0.0  0.0      0     0 ?        I<   10:30   0:02 [kworker/7:1H-events_highpri]
+root         203  0.0  0.0      0     0 ?        I<   10:30   0:00 [kworker/1:1H-kblockd]
+root         244  0.0  0.0      0     0 ?        S    10:30   0:00 [scsi_eh_0]
+root         245  0.0  0.0      0     0 ?        I<   10:30   0:00 [kworker/R-scsi_]
+root         246  0.0  0.0      0     0 ?        I<   10:30   0:00 [kworker/R-nvme-]
+root         248  0.0  0.0      0     0 ?        I<   10:30   0:00 [kworker/R-nvme-]
+root         249  0.0  0.0      0     0 ?        I<   10:30   0:00 [kworker/R-nvme-]
+root         250  0.0  0.0      0     0 ?        I<   10:30   0:00 [kworker/R-nvme-]
+root         261  0.0  0.0      0     0 ?        S    10:30   0:00 [irq/18-alcor_sdmmc]
+root         263  0.0  0.0      0     0 ?        S    10:30   0:00 [irq/74-ELAN0710:01]
+root         294  0.0  0.0      0     0 ?        S    10:30   0:00 [jbd2/sda3-8]
+root         295  0.0  0.0      0     0 ?        I<   10:30   0:00 [kworker/R-ext4-]
+root         334  0.0  0.6 109920 49020 ?        S<s  10:30   0:15 /lib/systemd/systemd-journald
+root         412  0.0  0.1  28768  8508 ?        Ss   10:30   0:03 /lib/systemd/systemd-udevd
+root         506  0.0  0.0      0     0 ?        I<   10:30   0:00 [kworker/R-crypt]
+root         550  0.0  0.0      0     0 ?        I<   10:30   0:00 [kworker/R-cfg80]
+root         590  0.0  0.0      0     0 ?        I<   10:30   0:00 [kworker/R-ttm]
+root         598  0.0  0.0      0     0 ?        S    10:30   0:00 [card1-crtc0]
+root         599  0.0  0.0      0     0 ?        S    10:30   0:00 [card1-crtc1]
+root         600  0.0  0.0      0     0 ?        S    10:30   0:00 [card1-crtc2]
+root         670  0.7  0.0      0     0 ?        S    10:30   4:07 [irq/153-rtw88_pci]
+root         779  0.0  0.0      0     0 ?        I<   10:30   0:00 [kworker/R-nvkm-]
+root         780  0.0  0.0      0     0 ?        I<   10:30   0:00 [kworker/R-ttm]
+root         781  0.0  0.0      0     0 ?        S    10:30   0:00 [card0-crtc0]
+root         782  0.0  0.0      0     0 ?        S    10:30   0:00 [card0-crtc1]
+root         783  0.0  0.0      0     0 ?        S    10:30   0:00 [card0-crtc2]
+root         784  0.0  0.0      0     0 ?        S    10:30   0:00 [card0-crtc3]
+root         866  0.0  0.0      0     0 ?        S    10:30   0:01 [jbd2/sda4-8]
+root         867  0.0  0.0      0     0 ?        I<   10:30   0:00 [kworker/R-ext4-]
+systemd+     928  0.0  0.0  14836  6284 ?        Ss   10:30   0:32 /lib/systemd/systemd-oomd
+systemd+     929  0.0  0.1  26332 13108 ?        Ss   10:30   0:05 /lib/systemd/systemd-resolved
+systemd+     930  0.0  0.0  89388  7176 ?        Ssl  10:30   0:00 /lib/systemd/systemd-timesyncd
+root         935  0.0  0.0 243156  7700 ?        Ssl  10:30   0:01 /usr/libexec/accounts-daemon
+root         936  0.0  0.0   2816  2016 ?        Ss   10:30   0:01 /usr/sbin/acpid
+avahi        938  0.0  0.0   7712  4248 ?        Ss   10:30   0:00 avahi-daemon: running [julio-HP-Pavilion-Gaming-Laptop-15-dk1xxx.local]
+root         939  0.0  0.0  10592  4976 ?        Ss   10:30   0:00 /usr/lib/bluetooth/bluetoothd
+root         940  0.0  0.0  12112  2724 ?        Ss   10:30   0:00 /usr/sbin/cron -f -P
+message+     941  0.0  0.0  11108  6748 ?        Ss   10:30   0:04 @dbus-daemon --system --address=systemd: --nofork --nopidfile --systemd-activation --syslog-only
+root         942  0.0  0.2 338444 20204 ?        Ssl  10:30   0:10 /usr/sbin/NetworkManager --no-daemon
+root         962  0.0  0.0  82808  3868 ?        Ssl  10:30   0:02 /usr/sbin/irqbalance --foreground
+root         963  0.0  0.2  43672 19948 ?        Ss   10:30   0:00 /usr/bin/python3 /usr/bin/networkd-dispatcher --run-startup-triggers
+root         964  0.0  0.1 236968 10648 ?        Ssl  10:30   0:02 /usr/libexec/polkitd --no-debug
+root         965  0.0  0.0 242988  7524 ?        Ssl  10:30   0:00 /usr/libexec/power-profiles-daemon
+syslog       966  0.0  0.0 222404  6968 ?        Ssl  10:30   0:02 /usr/sbin/rsyslogd -n -iNONE
+root         969  0.0  0.2 2059868 21752 ?       Ssl  10:30   0:05 /usr/lib/snapd/snapd
+root         970  0.0  0.0 239136  6272 ?        Ssl  10:30   0:00 /usr/libexec/switcheroo-control
+root         971  0.0  0.0  48272  7372 ?        Ss   10:30   0:00 /lib/systemd/systemd-logind
+root         972  0.0  0.1 278792 11292 ?        Ssl  10:30   0:07 /usr/sbin/thermald --systemd --dbus-enable --adaptive
+root         973  0.0  0.1 393740 12912 ?        Ssl  10:30   0:03 /usr/libexec/udisks2/udisksd
+root         974  0.0  0.1  17684 11392 ?        Ss   10:30   0:00 /sbin/wpa_supplicant -u -s -O /run/wpa_supplicant
+avahi        977  0.0  0.0   7444  1432 ?        S    10:30   0:00 avahi-daemon: chroot helper
+root        1082  0.0  0.1 243408 10276 ?        Ssl  10:30   0:00 /usr/sbin/ModemManager
+root        1095  0.0  0.1 245356  9144 ?        Ssl  10:30   0:01 /usr/libexec/upowerd
+root        1113  0.0  0.1  75236 13072 ?        Ss   10:30   0:00 /usr/sbin/cupsd -l
+root        1116  0.0  0.3 120756 23780 ?        Ssl  10:30   0:00 /usr/bin/python3 /usr/share/unattended-upgrades/unattended-upgrade-shutdown --wait-for-signal
+root        1117  0.0  0.6 2686296 50868 ?       Ssl  10:30   0:05 /usr/bin/containerd
+root        1207  0.0  0.1 244004  9028 ?        Ssl  10:31   0:00 /usr/sbin/gdm3
+root        1251  0.0  0.1 172636 11204 ?        Ssl  10:31   0:00 /usr/sbin/cups-browsed
+kernoops    1256  0.0  0.0  13092  2340 ?        Ss   10:31   0:00 /usr/sbin/kerneloops --test
+kernoops    1258  0.0  0.0  13092  2216 ?        Ss   10:31   0:00 /usr/sbin/kerneloops
+rtkit       1298  0.0  0.0 154004  3296 ?        SNsl 10:31   0:00 /usr/libexec/rtkit-daemon
+root        1309  0.2  0.9 3024664 75472 ?       Ssl  10:31   1:37 /usr/bin/dockerd -H fd:// --containerd=/run/containerd/containerd.sock
+root        1973  0.0  0.2 375580 21956 ?        Ssl  10:31   0:05 /usr/libexec/packagekitd
+colord      2203  0.0  0.1 248256  9672 ?        Ssl  10:31   0:00 /usr/libexec/colord
+root        2337  0.0  0.1 320980 11540 ?        Sl   10:50   0:00 gdm-session-worker [pam/gdm-password]
+julio       2351  0.0  0.1  18380 11232 ?        Ss   10:50   0:03 /lib/systemd/systemd --user
+julio       2354  0.0  0.0 170312  4324 ?        S    10:50   0:00 (sd-pam)
+julio       2360  0.0  0.0  42468  4116 ?        S<sl 10:50   0:00 /usr/bin/pipewire
+julio       2361  0.0  0.0  26224  3812 ?        Ssl  10:50   0:00 /usr/bin/pipewire-media-session
+julio       2362  0.3  0.3 2552124 23840 ?       S<sl 10:50   1:48 /usr/bin/pulseaudio --daemonize=no --log-target=journal
+julio       2373  0.0  0.1  17716 13496 ?        Ss   10:50   0:05 /usr/bin/dbus-daemon --session --address=systemd: --nofork --nopidfile --systemd-activation --syslog-only
+julio       2387  0.0  0.0 243472  7332 ?        Ssl  10:50   0:00 /usr/libexec/gvfsd
+julio       2392  0.0  0.0 380896  6092 ?        Sl   10:50   0:00 /usr/libexec/gvfsd-fuse /run/user/1000/gvfs -f
+julio       2402  0.0  0.0 243728  7232 ?        Sl   10:50   0:00 /usr/bin/gnome-keyring-daemon --daemonize --login
+julio       2404  0.0  0.0 466096  7336 ?        Ssl  10:50   0:00 /usr/libexec/xdg-document-portal
+julio       2408  0.0  0.0 239072  6372 ?        Ssl  10:50   0:00 /usr/libexec/xdg-permission-store
+root        2414  0.0  0.0   2796  1892 ?        Ss   10:50   0:00 fusermount3 -o rw,nosuid,nodev,fsname=portal,auto_unmount,subtype=portal -- /run/user/1000/doc
+julio       2426  0.0  0.3 652652 23792 ?        SNsl 10:50   0:01 /usr/libexec/tracker-miner-fs-3
+julio       2435  0.0  0.0 165192  5872 tty2     Ssl+ 10:50   0:00 /usr/libexec/gdm-wayland-session env GNOME_SHELL_SESSION_MODE=ubuntu /usr/bin/gnome-session --session=ubuntu
+julio       2438  0.0  0.1 225840 11732 tty2     Sl+  10:50   0:00 /usr/libexec/gnome-session-binary --session=ubuntu
+julio       2481  0.0  0.0  94528  5164 ?        Ssl  10:50   0:00 /usr/libexec/gnome-session-ctl --monitor
+julio       2502  0.0  0.1 522824 13860 ?        Ssl  10:50   0:01 /usr/libexec/gnome-session-binary --systemd-service --session=ubuntu
+julio       2518  0.0  0.0 309628  7796 ?        Sl   10:50   0:00 /usr/libexec/at-spi-bus-launcher --launch-immediately
+julio       2525  0.0  0.0   8564  4392 ?        S    10:50   0:00 /usr/bin/dbus-daemon --config-file=/usr/share/defaults/at-spi2/accessibility.conf --nofork --print-address 11 --address=unix:path=/run/user/1000
+julio       2528  4.7  2.7 6092132 218408 ?      Ssl  10:50  24:49 /usr/bin/gnome-shell
+root        2568  0.0  0.0      0     0 ?        S<   10:50   0:00 [krfcommd]
+julio       2581  0.0  0.1 582804 15076 ?        Sl   10:50   0:00 /usr/libexec/gnome-shell-calendar-server
+julio       2587  0.0  0.0 157100  5892 ?        Ssl  10:50   0:00 /usr/libexec/dconf-service
+julio       2588  0.0  0.1 319148 10704 ?        Ssl  10:50   0:05 /usr/libexec/gvfs-udisks2-volume-monitor
+julio       2595  0.0  0.0 239460  6408 ?        Ssl  10:50   0:00 /usr/libexec/gvfs-goa-volume-monitor
+julio       2599  0.0  0.2 584816 17644 ?        Sl   10:50   0:00 /usr/libexec/goa-daemon
+julio       2606  0.0  0.1 341340 10788 ?        Sl   10:50   0:00 /usr/libexec/goa-identity-service
+julio       2612  0.0  0.0 239256  6500 ?        Ssl  10:50   0:00 /usr/libexec/gvfs-mtp-volume-monitor
+julio       2616  0.0  0.0 240344  6624 ?        Ssl  10:50   0:00 /usr/libexec/gvfs-gphoto2-volume-monitor
+julio       2620  0.0  0.0 318036  7816 ?        Ssl  10:50   0:00 /usr/libexec/gvfs-afc-volume-monitor
+julio       2630  0.0  0.2 1075280 18684 ?       Ssl  10:50   0:00 /usr/libexec/evolution-source-registry
+julio       2639  0.0  0.1 317952  8628 ?        Sl   10:50   0:00 /usr/libexec/gvfsd-trash --spawner :1.4 /org/gtk/gvfs/exec_spaw/0
+julio       2646  0.0  0.2 1318696 23648 ?       Ssl  10:50   0:00 /usr/libexec/evolution-calendar-factory
+julio       2651  0.0  0.2 2934208 19304 ?       Sl   10:50   0:00 /usr/bin/gjs /usr/share/gnome-shell/org.gnome.Shell.Notifications
+julio       2653  0.0  0.0 162688  7128 ?        Sl   10:50   0:00 /usr/libexec/at-spi2-registryd --use-gnome-session
+julio       2668  0.0  0.0   2892  1536 ?        Ss   10:50   0:00 sh -c /usr/bin/ibus-daemon --panel disable $([ "$XDG_SESSION_TYPE" = "x11" ] && echo "--xim")
+julio       2669  0.0  0.0 313420  6932 ?        Ssl  10:50   0:00 /usr/libexec/gsd-a11y-settings
+julio       2671  0.0  0.1 391976  9372 ?        Sl   10:50   0:30 /usr/bin/ibus-daemon --panel disable
+julio       2672  0.0  0.1 466048 15616 ?        Ssl  10:50   0:00 /usr/libexec/gsd-color
+julio       2674  0.0  0.1 378460 12672 ?        Ssl  10:50   0:00 /usr/libexec/gsd-datetime
+julio       2676  0.0  0.0 315052  7828 ?        Ssl  10:50   0:02 /usr/libexec/gsd-housekeeping
+julio       2681  0.0  0.1 344028 13752 ?        Ssl  10:50   0:00 /usr/libexec/gsd-keyboard
+julio       2683  0.0  0.2 1129868 18460 ?       Ssl  10:50   0:01 /usr/libexec/gsd-media-keys
+julio       2687  0.0  0.2 719048 19980 ?        Ssl  10:50   0:01 /usr/libexec/gsd-power
+julio       2691  0.0  0.1 252712 10568 ?        Ssl  10:50   0:00 /usr/libexec/gsd-print-notifications
+julio       2692  0.0  0.0 460712  6860 ?        Ssl  10:50   0:00 /usr/libexec/gsd-rfkill
+julio       2695  0.0  0.0 239272  6424 ?        Ssl  10:50   0:00 /usr/libexec/gsd-screensaver-proxy
+julio       2697  0.0  0.1 468932 10420 ?        Ssl  10:50   0:02 /usr/libexec/gsd-sharing
+julio       2698  0.0  0.0 315304  7368 ?        Ssl  10:50   0:00 /usr/libexec/gsd-smartcard
+julio       2702  0.0  0.1 322340  9352 ?        Ssl  10:50   0:00 /usr/libexec/gsd-sound
+julio       2704  0.0  0.1 344532 12632 ?        Ssl  10:50   0:00 /usr/libexec/gsd-wacom
+julio       2715  0.0  0.0 232272  7196 ?        Sl   10:50   0:00 /usr/libexec/gsd-disk-utility-notify
+julio       2726  0.0  0.3 825852 28892 ?        Sl   10:50   0:00 /usr/libexec/evolution-data-server/evolution-alarm-notify
+julio       2767  0.0  0.1 345212 11428 ?        Sl   10:50   0:00 /usr/libexec/gsd-printer
+julio       2776  0.0  0.0 166404  6928 ?        Sl   10:50   0:00 /usr/libexec/ibus-memconf
+julio       2777  0.0  0.1 351188 14968 ?        Sl   10:50   0:05 /usr/libexec/ibus-extension-gtk3
+julio       2818  0.0  0.0 240156  7192 ?        Sl   10:50   0:00 /usr/libexec/ibus-portal
+julio       2830  0.0  0.0 166540  7620 ?        Sl   10:50   0:07 /usr/libexec/ibus-engine-simple
+julio       2856  0.0  0.2 2934204 18228 ?       Sl   10:50   0:00 /usr/bin/gjs /usr/share/gnome-shell/org.gnome.ScreenSaver
+julio       2870  0.0  0.4 850512 34704 ?        Sl   10:50   0:04 /snap/snap-store/1113/usr/bin/snap-store --gapplication-service
+julio       2892  0.0  0.1 479252 11332 ?        Ssl  10:50   0:01 /usr/libexec/xdg-desktop-portal
+julio       2974  0.0  0.2 749064 22756 ?        Ssl  10:50   0:00 /usr/libexec/evolution-addressbook-factory
+julio       2978  0.0  0.6 1210140 47884 ?       Ssl  10:50   0:01 /usr/libexec/xdg-desktop-portal-gnome
+julio       3023  0.0  0.1 347872 15340 ?        Ssl  10:50   0:00 /usr/libexec/xdg-desktop-portal-gtk
+julio       3036  0.0  0.0 165768  6304 ?        Ssl  10:50   0:00 /usr/libexec/gvfsd-metadata
+julio       3058  0.0  0.0  39000  7524 ?        Ss   10:50   0:00 /snap/snapd-desktop-integration/178/usr/bin/snapd-desktop-integration
+julio       3115  0.0  0.1 429388 11080 ?        Sl   10:50   0:00 /snap/snapd-desktop-integration/178/usr/bin/snapd-desktop-integration
+julio       4312  0.0  0.2 498064 20384 ?        Sl   10:51   0:00 update-notifier
+julio       4832 12.9  6.6 12893152 527704 ?     Sl   12:14  57:02 /snap/firefox/4793/usr/lib/firefox/firefox
+julio       5021  2.1  0.6 217504 50732 ?        Sl   12:14   9:22 /snap/firefox/4793/usr/lib/firefox/firefox -contentproc -parentBuildID 20240819223648 -prefsLen 33121 -prefMapSize 254031 -appDir /snap/firefox/
+julio       5038  0.0  2.0 2520460 158988 ?      Sl   12:14   0:22 /snap/firefox/4793/usr/lib/firefox/firefox -contentproc -childID 1 -isForBrowser -prefsLen 33197 -prefMapSize 254031 -jsInitLen 234852 -parentBu
+julio       5074  0.1  1.7 2668828 140968 ?      Sl   12:14   0:30 /snap/firefox/4793/usr/lib/firefox/firefox -contentproc -childID 2 -isForBrowser -prefsLen 27373 -prefMapSize 254031 -jsInitLen 234852 -parentBu
+julio       5078  0.1  2.0 2540396 164564 ?      Sl   12:14   0:37 /snap/firefox/4793/usr/lib/firefox/firefox -contentproc -childID 3 -isForBrowser -prefsLen 27373 -prefMapSize 254031 -jsInitLen 234852 -parentBu
+julio       5082  0.2  2.3 2582804 185968 ?      Sl   12:14   1:08 /snap/firefox/4793/usr/lib/firefox/firefox -contentproc -childID 4 -isForBrowser -prefsLen 27373 -prefMapSize 254031 -jsInitLen 234852 -parentBu
+julio       5146  0.0  0.1 1977620 10400 ?       Sl   12:14   0:01 /usr/bin/snap userd
+julio       5299  0.0  1.0 2440196 80444 ?       Sl   12:14   0:08 /snap/firefox/4793/usr/lib/firefox/firefox -contentproc -childID 5 -isForBrowser -prefsLen 37958 -prefMapSize 254031 -jsInitLen 234852 -parentBu
+julio       5465  0.9  0.6 348080 49920 ?        Sl   12:14   4:04 /snap/firefox/4793/usr/lib/firefox/firefox -contentproc -parentBuildID 20240819223648 -sandboxingKind 0 -prefsLen 38069 -prefMapSize 254031 -app
+julio       5472  0.0  1.0 2431700 85452 ?       Sl   12:14   0:09 /snap/firefox/4793/usr/lib/firefox/firefox -contentproc -childID 6 -isForBrowser -prefsLen 32082 -prefMapSize 254031 -jsInitLen 234852 -parentBu
+julio       5479  0.4  1.9 2599476 150928 ?      Sl   12:14   1:48 /snap/firefox/4793/usr/lib/firefox/firefox -contentproc -childID 8 -isForBrowser -prefsLen 32082 -prefMapSize 254031 -jsInitLen 234852 -parentBu
+julio       5741  2.6  0.9 704632 71680 ?        Sl   12:14  11:29 /snap/firefox/4793/usr/lib/firefox/firefox -contentproc -parentBuildID 20240819223648 -prefsLen 38308 -prefMapSize 254031 -appDir /snap/firefox/
+julio       5789  0.0  1.5 2517516 123996 ?      Sl   12:14   0:22 /snap/firefox/4793/usr/lib/firefox/firefox -contentproc -childID 9 -isForBrowser -prefsLen 32321 -prefMapSize 254031 -jsInitLen 234852 -parentBu
+julio       5850  0.0  0.9 2416144 74332 ?       Sl   12:14   0:07 /snap/firefox/4793/usr/lib/firefox/firefox -contentproc -childID 10 -isForBrowser -prefsLen 32321 -prefMapSize 254031 -jsInitLen 234852 -parentB
+julio       5868  0.0  0.9 2421296 78108 ?       Sl   12:14   0:08 /snap/firefox/4793/usr/lib/firefox/firefox -contentproc -childID 11 -isForBrowser -prefsLen 32321 -prefMapSize 254031 -jsInitLen 234852 -parentB
+julio       5955  0.0  0.9 2416180 73100 ?       Sl   12:14   0:07 /snap/firefox/4793/usr/lib/firefox/firefox -contentproc -childID 13 -isForBrowser -prefsLen 32322 -prefMapSize 254031 -jsInitLen 234852 -parentB
+julio       5981  0.0  0.9 2416176 73580 ?       Sl   12:14   0:07 /snap/firefox/4793/usr/lib/firefox/firefox -contentproc -childID 15 -isForBrowser -prefsLen 32368 -prefMapSize 254031 -jsInitLen 234852 -parentB
+julio       6047  0.0  0.9 2420888 75664 ?       Sl   12:14   0:07 /snap/firefox/4793/usr/lib/firefox/firefox -contentproc -childID 16 -isForBrowser -prefsLen 32368 -prefMapSize 254031 -jsInitLen 234852 -parentB
+julio       6049  0.0  0.9 2421900 75140 ?       Sl   12:14   0:08 /snap/firefox/4793/usr/lib/firefox/firefox -contentproc -childID 17 -isForBrowser -prefsLen 32368 -prefMapSize 254031 -jsInitLen 234852 -parentB
+julio       6121  0.0  1.0 2422932 80280 ?       Sl   12:14   0:08 /snap/firefox/4793/usr/lib/firefox/firefox -contentproc -childID 18 -isForBrowser -prefsLen 32368 -prefMapSize 254031 -jsInitLen 234852 -parentB
+julio       6168  0.0  0.9 2415436 72764 ?       Sl   12:14   0:08 /snap/firefox/4793/usr/lib/firefox/firefox -contentproc -childID 19 -isForBrowser -prefsLen 32368 -prefMapSize 254031 -jsInitLen 234852 -parentB
+julio       6192  0.0  0.9 2418836 75676 ?       Sl   12:14   0:08 /snap/firefox/4793/usr/lib/firefox/firefox -contentproc -childID 20 -isForBrowser -prefsLen 32368 -prefMapSize 254031 -jsInitLen 234852 -parentB
+julio       6197  0.0  0.9 2417812 74460 ?       Sl   12:14   0:07 /snap/firefox/4793/usr/lib/firefox/firefox -contentproc -childID 21 -isForBrowser -prefsLen 32368 -prefMapSize 254031 -jsInitLen 234852 -parentB
+julio       6240  0.0  0.9 2415472 73432 ?       Sl   12:14   0:08 /snap/firefox/4793/usr/lib/firefox/firefox -contentproc -childID 22 -isForBrowser -prefsLen 32368 -prefMapSize 254031 -jsInitLen 234852 -parentB
+julio       6268  0.0  0.9 2420576 77048 ?       Sl   12:14   0:09 /snap/firefox/4793/usr/lib/firefox/firefox -contentproc -childID 23 -isForBrowser -prefsLen 32368 -prefMapSize 254031 -jsInitLen 234852 -parentB
+julio       6308  0.0  0.9 2415440 73552 ?       Sl   12:14   0:08 /snap/firefox/4793/usr/lib/firefox/firefox -contentproc -childID 24 -isForBrowser -prefsLen 32368 -prefMapSize 254031 -jsInitLen 234852 -parentB
+julio       6340  0.0  0.9 2415440 73692 ?       Sl   12:14   0:08 /snap/firefox/4793/usr/lib/firefox/firefox -contentproc -childID 25 -isForBrowser -prefsLen 32368 -prefMapSize 254031 -jsInitLen 234852 -parentB
+julio       6373  0.0  0.9 2416756 74728 ?       Sl   12:14   0:08 /snap/firefox/4793/usr/lib/firefox/firefox -contentproc -childID 26 -isForBrowser -prefsLen 32368 -prefMapSize 254031 -jsInitLen 234852 -parentB
+julio       6384  0.0  0.9 2417784 75024 ?       Sl   12:14   0:08 /snap/firefox/4793/usr/lib/firefox/firefox -contentproc -childID 27 -isForBrowser -prefsLen 32368 -prefMapSize 254031 -jsInitLen 234852 -parentB
+julio       6391  0.0  0.9 2421932 76548 ?       Sl   12:14   0:08 /snap/firefox/4793/usr/lib/firefox/firefox -contentproc -childID 28 -isForBrowser -prefsLen 32368 -prefMapSize 254031 -jsInitLen 234852 -parentB
+julio       6459  0.0  0.9 2416788 74668 ?       Sl   12:14   0:08 /snap/firefox/4793/usr/lib/firefox/firefox -contentproc -childID 29 -isForBrowser -prefsLen 32368 -prefMapSize 254031 -jsInitLen 234852 -parentB
+julio       7015  0.3  1.9 1187139344 153488 ?   SLsl 12:18   1:40 /snap/code/167/usr/share/code/code --no-sandbox --force-user-env
+julio       7017  0.0  0.4 34048204 38412 ?      S    12:18   0:00 /snap/code/167/usr/share/code/code --type=zygote --no-zygote-sandbox --no-sandbox
+julio       7018  0.0  0.5 34048216 41404 ?      S    12:18   0:00 /snap/code/167/usr/share/code/code --type=zygote --no-sandbox
+julio       7031  0.0  0.1 33601264 11964 ?      Sl   12:18   0:00 /snap/code/167/usr/share/code/chrome_crashpad_handler --monitor-self-annotation=ptype=crashpad-handler --no-rate-limit --database=/home/julio/.c
+julio       7034  0.1  0.4 1091808 33772 ?       Sl   12:18   0:52 /usr/bin/Xwayland :0 -rootless -noreset -accessx -core -auth /run/user/1000/.mutter-Xwaylandauth.BZ87S2 -listen 4 -listen 5 -displayfd 6 -initfd
+julio       7061  0.0  0.2 1265676 19164 ?       Ssl  12:18   0:00 /usr/libexec/gsd-xsettings
+julio       7098  0.0  0.1 197536 14988 ?        Sl   12:18   0:00 /usr/libexec/ibus-x11
+julio       7133  0.0  0.7 33860972 59040 ?      Sl   12:18   0:03 /snap/code/167/usr/share/code/code --type=utility --utility-sub-type=network.mojom.NetworkService --lang=es-419 --service-sandbox-type=none --no
+julio       7172  2.0  4.2 1191587028 335272 ?   Sl   12:18   8:45 /snap/code/167/usr/share/code/code --type=renderer --crashpad-handler-pid=7031 --enable-crash-reporter=71cf3be5-be91-4dd5-9b49-14b66f21e125,no_c
+julio       7196  0.7  1.1 34008948 91464 ?      Sl   12:18   3:04 /snap/code/167/usr/share/code/code --type=gpu-process --disable-gpu-sandbox --no-sandbox --crashpad-handler-pid=7031 --enable-crash-reporter=71c
+julio       7434  0.3  1.2 1186932156 95048 ?    Sl   12:18   1:21 /snap/code/167/usr/share/code/code --type=utility --utility-sub-type=node.mojom.NodeService --lang=es-419 --service-sandbox-type=none --no-sandb
+julio       7446  0.1  2.6 1186895576 210832 ?   Sl   12:18   0:42 /snap/code/167/usr/share/code/code --type=utility --utility-sub-type=node.mojom.NodeService --lang=es-419 --service-sandbox-type=none --no-sandb
+julio       7457  0.0  1.2 1186885156 101212 ?   Sl   12:18   0:14 /snap/code/167/usr/share/code/code --type=utility --utility-sub-type=node.mojom.NodeService --lang=es-419 --service-sandbox-type=none --no-sandb
+julio       7458  0.0  1.0 1186902124 82144 ?    Sl   12:18   0:06 /snap/code/167/usr/share/code/code --type=utility --utility-sub-type=node.mojom.NodeService --lang=es-419 --service-sandbox-type=none --no-sandb
+julio       7544  0.0  0.0  12608  3720 pts/0    Ss+  12:18   0:00 /usr/bin/bash --init-file /snap/code/167/usr/share/code/resources/app/out/vs/workbench/contrib/terminal/browser/media/shellIntegration-bash.sh
+julio       7546  0.0  0.0  12608  3632 pts/1    Ss+  12:18   0:00 /usr/bin/bash --init-file /snap/code/167/usr/share/code/resources/app/out/vs/workbench/contrib/terminal/browser/media/shellIntegration-bash.sh
+julio       7548  0.0  0.0  12744  4660 pts/2    Ss+  12:18   0:00 /usr/bin/bash --init-file /snap/code/167/usr/share/code/resources/app/out/vs/workbench/contrib/terminal/browser/media/shellIntegration-bash.sh
+julio       8017  0.0  0.9 1186817964 73100 ?    Sl   12:18   0:05 /snap/code/167/usr/share/code/code /snap/code/167/usr/share/code/resources/app/extensions/markdown-language-features/dist/serverWorkerMain --nod
+julio      25898  0.0  0.9 1186850888 78048 ?    Sl   15:50   0:01 /snap/code/167/usr/share/code/code /home/julio/.vscode/extensions/ms-azuretools.vscode-docker-1.29.2/dist/dockerfile-language-server-nodejs/lib/
+julio      25899  0.0  0.7 1186817964 62884 ?    Sl   15:50   0:01 /snap/code/167/usr/share/code/code /home/julio/.vscode/extensions/ms-azuretools.vscode-docker-1.29.2/dist/compose-language-service/lib/server.js
+julio      27179  8.0 12.2 3463728 971764 ?      Sl   16:01  17:20 /snap/firefox/4793/usr/lib/firefox/firefox -contentproc -childID 131 -isForBrowser -prefsLen 32455 -prefMapSize 254031 -jsInitLen 234852 -parent
+julio      27665  0.5  0.7 570112 57120 ?        Rsl  16:07   1:03 /usr/libexec/gnome-terminal-server
+julio      27683  0.0  0.0  17892  5312 pts/3    Ss   16:07   0:00 bash
+root       28096  0.0  0.0      0     0 ?        I<   16:12   0:06 [kworker/u25:2-rtw_tx_wq]
+julio      28367  2.1  2.7 2706488 218356 ?      Sl   16:16   4:17 /snap/firefox/4793/usr/lib/firefox/firefox -contentproc -childID 133 -isForBrowser -prefsLen 32455 -prefMapSize 254031 -jsInitLen 234852 -parent
+julio      28370  0.0  1.5 2516656 119732 ?      Sl   16:16   0:04 /snap/firefox/4793/usr/lib/firefox/firefox -contentproc -childID 134 -isForBrowser -prefsLen 32455 -prefMapSize 254031 -jsInitLen 234852 -parent
+root       29080  0.0  0.0      0     0 ?        I    16:20   0:00 [kworker/6:1-events]
+julio      30819  0.0  0.0   4532  3548 ?        S    16:30   0:00 /home/julio/.vscode/extensions/ms-python.python-2024.12.3-linux-x64/python-env-tools/bin/pet server
+julio      30825  0.0  0.1  12608  9112 pts/4    Ss+  16:30   0:00 /usr/bin/bash --init-file /snap/code/167/usr/share/code/resources/app/out/vs/workbench/contrib/terminal/browser/media/shellIntegration-bash.sh
+julio      31077  0.0  2.4 1188989800 196216 ?   Sl   16:30   0:10 /snap/code/167/usr/share/code/code /home/julio/.vscode/extensions/ms-python.vscode-pylance-2024.8.2/dist/server.bundle.js --cancellationReceive=
+root       33484  0.0  0.4 396976 33624 ?        Ssl  16:46   0:01 /usr/libexec/fwupd/fwupd
+root       36408  0.0  0.0      0     0 ?        I    17:06   0:00 [kworker/1:0-inet_frag_wq]
+root       36874  0.1  0.0      0     0 ?        I    17:06   0:09 [kworker/7:2-i915-unordered]
+root       38307  0.0  0.0      0     0 ?        I    17:23   0:00 [kworker/0:0-events]
+root       38360  0.0  0.0      0     0 ?        I    17:23   0:00 [kworker/6:0-events]
+julio      39047  0.0  1.4 1186817964 117056 ?   Sl   17:33   0:02 /snap/code/167/usr/share/code/code --max-old-space-size=3072 /snap/code/167/usr/share/code/resources/app/extensions/node_modules/typescript/lib/
+julio      39048  0.0  1.5 1186817964 124824 ?   Sl   17:33   0:02 /snap/code/167/usr/share/code/code --max-old-space-size=3072 /snap/code/167/usr/share/code/resources/app/extensions/node_modules/typescript/lib/
+julio      39078  0.0  1.2 1186817948 94852 ?    Sl   17:33   0:00 /snap/code/167/usr/share/code/code /snap/code/167/usr/share/code/resources/app/extensions/node_modules/typescript/lib/typingsInstaller.js --glob
+root       39456  0.0  0.0      0     0 ?        I    17:43   0:00 [kworker/9:1-mm_percpu_wq]
+root       39561  0.0  0.0      0     0 ?        I    17:46   0:00 [kworker/4:2-events]
+root       39671  0.0  0.0      0     0 ?        I    17:48   0:00 [kworker/1:1-events]
+root       39895  0.0  0.0      0     0 ?        I    17:52   0:00 [kworker/3:0-ipv6_addrconf]
+root       39947  0.0  0.0      0     0 ?        I    17:54   0:00 [kworker/4:0-events]
+root       39999  0.0  0.0      0     0 ?        I    17:55   0:00 [kworker/5:2-events]
+root       40039  0.0  0.0      0     0 ?        I    17:55   0:02 [kworker/u24:17-events_unbound]
+root       40058  0.0  0.0      0     0 ?        I    19:03   0:00 [kworker/11:3-events]
+root       40059  0.0  0.0      0     0 ?        I    19:03   0:00 [kworker/8:3-events]
+root       40097  0.0  0.0      0     0 ?        S    19:03   0:00 [irq/137-mei_me]
+root       40098  0.0  0.0      0     0 ?        I<   19:03   0:01 [kworker/u25:1-rtw_tx_wq]
+julio      40329  0.1  0.8 3201788 68920 ?       Sl   19:03   0:02 gjs /usr/share/gnome-shell/extensions/ding@rastersoft.com/ding.js -E -P /usr/share/gnome-shell/extensions/ding@rastersoft.com -M 0 -D 0:0:1920:1
+root       40528  0.0  0.0      0     0 ?        I    19:06   0:00 [kworker/2:1-events]
+root       41492  0.0  0.0      0     0 ?        I    19:13   0:00 [kworker/5:0-events]
+root       41506  0.0  0.0      0     0 ?        I    19:13   0:00 [kworker/9:2-inet_frag_wq]
+root       41525  0.0  0.0      0     0 ?        I    19:13   0:00 [kworker/8:1-events]
+root       41735  0.0  0.0      0     0 ?        I    19:13   0:00 [kworker/u24:0-flush-8:0]
+root       42273  0.0  0.0      0     0 ?        I    19:21   0:00 [kworker/u24:2-events_power_efficient]
+root       42345  0.0  0.0      0     0 ?        I    19:22   0:00 [kworker/3:2-events]
+root       42686  0.0  0.0      0     0 ?        I    19:24   0:00 [kworker/u24:3-events_unbound]
+root       43136  0.1  0.0      0     0 ?        I<   19:25   0:01 [kworker/u25:3-rtw_tx_wq]
+root       43213  0.0  0.0      0     0 ?        I    19:27   0:00 [kworker/2:2-rcu_gp]
+root       43233  0.2  0.0      0     0 ?        I    19:27   0:01 [kworker/7:1-i915-unordered]
+root       43379  0.0  0.0      0     0 ?        I    19:28   0:00 [kworker/10:1-events_freezable]
+julio      43390  0.1  1.0 2422412 84992 ?       Sl   19:28   0:00 /snap/firefox/4793/usr/lib/firefox/firefox -contentproc -childID 154 -isForBrowser -prefsLen 32455 -prefMapSize 254031 -jsInitLen 234852 -parent
+root       43462  0.0  0.0      0     0 ?        I    19:29   0:00 [kworker/0:1]
+julio      43674  0.0  0.1 391688  8704 ?        Sl   19:29   0:00 /usr/libexec/gvfsd-network --spawner :1.4 /org/gtk/gvfs/exec_spaw/1
+julio      43681  0.0  0.2 525496 21248 ?        Sl   19:29   0:00 /usr/libexec/gvfsd-smb-browse --spawner :1.4 /org/gtk/gvfs/exec_spaw/2
+julio      43689  0.0  0.1 319652  8832 ?        Sl   19:29   0:00 /usr/libexec/gvfsd-dnssd --spawner :1.4 /org/gtk/gvfs/exec_spaw/3
+julio      43917  0.0  0.9 2397148 72572 ?       Sl   19:30   0:00 /snap/firefox/4793/usr/lib/firefox/firefox -contentproc -childID 155 -isForBrowser -prefsLen 32455 -prefMapSize 254031 -jsInitLen 234852 -parent
+root       43979  0.0  0.0      0     0 ?        I    19:30   0:00 [kworker/10:3-events]
+root       43980  0.0  0.0      0     0 ?        I    19:30   0:00 [kworker/11:0-events]
+root       44027  0.0  0.0      0     0 ?        I    19:30   0:00 [kworker/9:0-events]
+julio      44107  0.0  0.9 2397164 72576 ?       Sl   19:30   0:00 /snap/firefox/4793/usr/lib/firefox/firefox -contentproc -childID 156 -isForBrowser -prefsLen 32455 -prefMapSize 254031 -jsInitLen 234852 -parent
+root       44183  0.0  0.0      0     0 ?        I    19:31   0:00 [kworker/3:1-events]
+root       44184  0.0  0.0      0     0 ?        I    19:31   0:00 [kworker/1:2]
+julio      44270  0.0  0.9 2397176 73344 ?       Sl   19:31   0:00 /snap/firefox/4793/usr/lib/firefox/firefox -contentproc -childID 157 -isForBrowser -prefsLen 32455 -prefMapSize 254031 -jsInitLen 234852 -parent
+root       44637  0.1  0.0      0     0 ?        D<   19:32   0:00 [kworker/u25:0+i915_flip]
+root       44679  0.0  0.0      0     0 ?        I    19:33   0:00 [kworker/7:0-rcu_gp]
+root       44912  0.0  0.0      0     0 ?        I    19:35   0:00 [kworker/u24:1-events_unbound]
+root       44973  0.0  0.1 1236472 11008 ?       Sl   19:35   0:00 /usr/bin/containerd-shim-runc-v2 -namespace moby -id 9283ea9593ff22fc5e92ae8473555ec3e02c300c615a7a3999c2490ead5506bf -address /run/containerd/c
+root       44994  0.7  0.3  33408 28844 ?        Ss   19:35   0:00 python /app.py
+root       45034  0.0  0.0      0     0 ?        I    19:35   0:00 [kworker/0:2]
+root       45055  0.0  0.1 1236216 11008 ?       Sl   19:35   0:00 /usr/bin/containerd-shim-runc-v2 -namespace moby -id 072ba14704bd03851edcb67b175f8b2a2ca29c8585ffc9ec5fe18ca184f03333 -address /run/containerd/c
+root       45079  0.1  0.4 251948 34624 ?        Ssl  19:35   0:00 node /app.js
+root       45118  0.0  0.0      0     0 ?        I    19:35   0:00 [kworker/u24:4]
+root       45119  0.0  0.0      0     0 ?        I    19:35   0:00 [kworker/u24:5-flush-8:0]
+root       45135  0.5  0.1 1236216 10996 ?       Sl   19:35   0:00 /usr/bin/containerd-shim-runc-v2 -namespace moby -id 6a79ec4e05c3c113bad0189d7d7d7fadfacb7d40244767edd74bea14122731a1 -address /run/containerd/c
+root       45156  100  0.4 252300 38468 ?        Rsl  19:35   0:54 node /heavy.js
+root       45195  0.0  0.0      0     0 ?        I    19:35   0:00 [kworker/2:0]
+root       45205  0.0  0.1 1236216 11008 ?       Sl   19:35   0:00 /usr/bin/containerd-shim-runc-v2 -namespace moby -id 03c5fd40dd29ebfa201a2bd5179497959115881f96e65969d003912248a32b4b -address /run/containerd/c
+root       45227  0.3  0.3  33408 29096 ?        Ss   19:35   0:00 python /app.py
+root       45269  0.0  0.1 1236472 10984 ?       Sl   19:35   0:00 /usr/bin/containerd-shim-runc-v2 -namespace moby -id 23b297de17ea26269289d5f2ea85ad567ddb3e1b67dfbaaed13cb41ffbb60a85 -address /run/containerd/c
+root       45289  0.3  0.3  33408 28968 ?        Ss   19:35   0:00 python /app.py
+root       45342  0.6  0.1 1236472 10872 ?       Sl   19:35   0:00 /usr/bin/containerd-shim-runc-v2 -namespace moby -id 09f2bbc14545f27a96a1be92acf75c3087770158b589f0aaee26de21c8beb0f4 -address /run/containerd/c
+root       45363  100  0.4 252268 38860 ?        Rsl  19:35   0:50 node /heavy.js
+root       45408  0.0  0.0      0     0 ?        I    19:35   0:00 [kworker/4:1]
+root       45419  0.0  0.1 1236472 10868 ?       Sl   19:35   0:00 /usr/bin/containerd-shim-runc-v2 -namespace moby -id 4c206e57d8f67c12254f84ca5949f801d8a102db7546f2c0844f563daaef2554 -address /run/containerd/c
+root       45440  0.1  0.1  12708 10540 ?        Ss   19:35   0:00 python /main.py
+root       45470  0.0  0.0      0     0 ?        I    19:35   0:00 [kworker/6:2]
+root       45480  0.0  0.1 1236216 11132 ?       Sl   19:35   0:00 /usr/bin/containerd-shim-runc-v2 -namespace moby -id f03c0a64c37dba726fe52bad8b8140dbf3a51102d7cbd9922a9e14e6743e3179 -address /run/containerd/c
+root       45503  0.4  0.3  33408 28972 ?        Ss   19:35   0:00 python /app.py
+root       45535  0.0  0.0      0     0 ?        I    19:35   0:00 [kworker/8:0]
+root       45557  0.6  0.1 1236216 10856 ?       Sl   19:35   0:00 /usr/bin/containerd-shim-runc-v2 -namespace moby -id 96001abcd7c9eba9f471f31b06747785aa487907be9d08638b942035cdb6c7fb -address /run/containerd/c
+root       45577 99.9  0.4 252268 37916 ?        Rsl  19:35   0:45 node /heavy.js
+root       45632  0.0  0.1 1236472 10880 ?       Sl   19:35   0:00 /usr/bin/containerd-shim-runc-v2 -namespace moby -id bc130f541b0074959a6874e48d63acb79287ee35a5434a3d85b648726666cfb2 -address /run/containerd/c
+root       45653  0.2  0.4 251692 34368 ?        Ssl  19:35   0:00 node /app.js
+julio      45768  0.0  0.0  15364  3456 pts/3    R+   19:36   0:00 ps aux
