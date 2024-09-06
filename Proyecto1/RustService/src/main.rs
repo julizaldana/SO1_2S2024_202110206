@@ -6,6 +6,12 @@ use chrono::Local;
 use reqwest::Client;
 use tokio;
 use serde_json::json;
+use std::process::exit;
+use tokio::signal::ctrl_c;
+use std::sync::{Arc, Mutex};
+use tokio::time::sleep;
+use std::time::Duration;
+
 
 /* 
     El #[derive (macro...)] es una característica de Rust que permite a los desarrolladores
@@ -418,7 +424,58 @@ fn parse_proc_to_struct(json_str: &str) -> Result<SystemInfo, serde_json::Error>
 
 #[tokio::main]
 async fn main() {
-    loop {
+    let loop_active = Arc::new(Mutex::new(true));
+
+    let loop_active_clone = Arc::clone(&loop_active);
+    tokio::spawn(async move {
+        // Esperar a que se reciba Ctrl+C
+        ctrl_c().await.expect("Failed to listen for Ctrl+C");
+        println!("Ctrl+C received. Sending GET request to generate graphs...");
+
+        // Hacer la petición GET al servidor FastAPI
+        let client = Client::new();
+        let response = client.get("http://127.0.0.1:8000/graph")
+            .send()
+            .await;
+
+        match response {
+            Ok(resp) => {
+                if resp.status().is_success() {
+                    println!("Petición GET exitosa.");
+                } else {
+                    println!("Error en la petición GET: {}", resp.status());
+                }
+            }
+            Err(err) => {
+                println!("Error al hacer la petición GET: {}", err);
+            }
+        }
+
+        // Hacer la petición GET al segundo endpoint /scatter_vsz_rss
+        let response_scatter = client.get("http://127.0.0.1:8000/scatter_vsz_rss")
+            .send()
+            .await;
+
+        match response_scatter {
+            Ok(resp) => {
+                if resp.status().is_success() {
+                    println!("Petición GET a /scatter_vsz_rss exitosa.");
+                } else {
+                    println!("Error en la petición GET a /scatter_vsz_rss: {}", resp.status());
+                }
+            }
+            Err(err) => {
+                println!("Error al hacer la petición GET a /scatter_vsz_rss: {}", err);
+            }
+        }
+
+        // Terminar el proceso
+        let mut active = loop_active_clone.lock().unwrap();
+        *active = false;
+        exit(0);
+    });
+
+    while *loop_active.lock().unwrap() {
         // Creamos una estructura de datos SystemInfo con un vector de procesos vacío.
         let system_info: Result<SystemInfo, _>;
 
@@ -437,6 +494,6 @@ async fn main() {
         }
 
         // Dormimos el hilo principal por 10 segundos.
-        tokio::time::sleep(tokio::time::Duration::from_secs(10)).await; // await también para sleep
+        sleep(Duration::from_secs(10)).await; // await también para sleep
     }
 }
