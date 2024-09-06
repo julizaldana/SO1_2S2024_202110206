@@ -2,6 +2,10 @@ use std::fs::File;
 use std::io::{self, Read};
 use std::path::Path;
 use serde::{Deserialize, Serialize};
+use chrono::Local;
+use reqwest::Client;
+use tokio;
+use serde_json::json;
 
 /* 
     El #[derive (macro...)] es una característica de Rust que permite a los desarrolladores
@@ -188,7 +192,7 @@ fn kill_container(id: &str) -> std::process::Output {
     output
 }
 
-fn analyzer( system_info:  SystemInfo) {
+async fn analyzer( system_info:  SystemInfo) {
 
 
     // Creamos un vector vacío para guardar los logs de los procesos.
@@ -292,23 +296,84 @@ fn analyzer( system_info:  SystemInfo) {
         }
     }
 
-    // TODO: ENVIAR LOGS AL CONTENEDOR REGISTRO
 
-    // Hacemos un print de los contenedores que matamos.
+    // FUNCION SEND_LOGS_TO_SERVER: ayuda para enviar los logs al server python fastapi
+    if let Err(e) = send_logs_to_server(&log_proc_list, &infomem_list).await {
+        eprintln!("Error al enviar logs: {}", e);
+    }
+
+    let now = Local::now(); // Obtiene la fecha y hora actual
+
+
     println!("*-*-*-*-*-*-*-*-*-*-*-*-*-Contenedores matados*-*-*-*-*-*-*-*-*-*-*-*-*-");
-    for process in log_proc_list {
-        println!("PID: {}, Name: {}, Container ID: {}, Vsz : {}, Rss : {} , Memory Usage: {}, CPU Usage: {} ", process.pid, process.name, process.container_id, process.vsz, process.rss, process.memory_usage, process.cpu_usage);
+    for process in &log_proc_list {
+        println!("PID: {}, Name: {}, Container ID: {}, Vsz : {}, Rss : {} , Memory Usage: {}, CPU Usage: {}, Fecha: {} ", process.pid, process.name, process.container_id, process.vsz, process.rss, process.memory_usage, process.cpu_usage, now.format("%Y-%m-%d %H:%M:%S"));
     }
 
     println!("*-*-*-*-*-*-*-*-*-*-*-*-*-Información RAM*-*-*-*-*-*-*-*-*-*-*-*-*-");
-    for meminfo in infomem_list {
-        println!("TotalRAM: {}, FreeRAM: {}, UsedRAM: {} ", meminfo.totalram, meminfo.freeram, meminfo.usedram);
+    for meminfo in &infomem_list {
+        println!("TotalRAM: {}, FreeRAM: {}, UsedRAM: {}, Fecha: {}", meminfo.totalram, meminfo.freeram, meminfo.usedram, now.format("%Y-%m-%d %H:%M:%S"));
     }
 
     println!("------------------------------");
-
     
 }
+
+async fn send_logs_to_server(log_proc_list: &Vec<LogProcess>, infomem_list: &Vec<Rammemory>) -> Result<(), Box<dyn std::error::Error>> {
+    // Crear el timestamp
+    let now = Local::now();
+    let timestamp = now.format("%Y-%m-%d %H:%M:%S").to_string();
+
+    // Construir el JSON de la memoria RAM
+    let ram_memory: Vec<_> = infomem_list.iter().map(|meminfo| {
+        json!({
+            "totalram": meminfo.totalram,
+            "freeram": meminfo.freeram,
+            "usedram": meminfo.usedram,
+            "timestamp": timestamp  // igual que en el modelo de FastAPI
+        })
+    }).collect();
+
+    // Construir el JSON de los procesos eliminados
+    let killed_processes: Vec<_> = log_proc_list.iter().map(|process| {
+        json!({
+            "pid": process.pid,
+            "name": process.name,
+            "container_id": process.container_id,
+            "vsz": process.vsz,
+            "rss": process.rss,
+            "memory_usage": process.memory_usage,
+            "cpu_usage": process.cpu_usage,
+            "timestamp": timestamp  // igual que en el modelo de FastAPI
+        })
+    }).collect();
+
+    // Construir el JSON final
+    let payload = json!({
+        "RAMmemory": ram_memory,
+        "KilledProcesses": killed_processes
+    });
+
+    // Crear un cliente HTTP
+    let client = Client::new();
+
+    // Hacer la petición POST al servidor FastAPI
+    let response = client.post("http://127.0.0.1:8000/logs")
+        .json(&payload)  // Pasar el JSON como cuerpo de la petición
+        .send()
+        .await?;
+
+    // Comprobar la respuesta
+    if response.status().is_success() {
+        println!("Logs enviados exitosamente.");
+    } else {
+        println!("Error al enviar logs: {}", response.status());
+    }
+
+    Ok(())
+}
+
+
 
 /*  
     Función para leer el archivo proc
@@ -351,15 +416,9 @@ fn parse_proc_to_struct(json_str: &str) -> Result<SystemInfo, serde_json::Error>
 }
 
 
-
-fn main() {
-
-    // TODO: antes de iniciar el loop, ejecutar el docker-compose.yml y obtener el id del contenedor registro.
-
-    // TODO: Utilizar algo para capturar la señal de terminación y matar el contenedor registro y cronjob.
-
+#[tokio::main]
+async fn main() {
     loop {
-        
         // Creamos una estructura de datos SystemInfo con un vector de procesos vacío.
         let system_info: Result<SystemInfo, _>;
 
@@ -371,14 +430,13 @@ fn main() {
 
         // Dependiendo de si se pudo deserializar el contenido del archivo proc o no, se ejecuta una u otra rama.
         match system_info {
-            Ok( info) => {
-                analyzer(info);
+            Ok(info) => {
+                analyzer(info).await; // Aquí se espera el futuro
             }
             Err(e) => println!("Failed to parse JSON: {}", e),
         }
 
         // Dormimos el hilo principal por 10 segundos.
-        std::thread::sleep(std::time::Duration::from_secs(10));
+        tokio::time::sleep(tokio::time::Duration::from_secs(10)).await; // await también para sleep
     }
-
 }

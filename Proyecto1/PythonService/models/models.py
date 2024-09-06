@@ -12,7 +12,6 @@ class LogProcess(BaseModel):
     rss: int
     memory_usage: float
     cpu_usage: float
-    action: str  #esta no es tan importante
     timestamp: str
 
 
@@ -23,3 +22,10 @@ class LogMemory(BaseModel):
     freeram: int
     usedram: int
     timestamp: str
+
+#Se crea una estructura general, para recibir logs unificados de Memoria y Procesos desde Rust.
+
+class Logs(BaseModel):
+    RAMmemory: List[LogMemory]
+    KilledProcesses: List[LogProcess]
+
