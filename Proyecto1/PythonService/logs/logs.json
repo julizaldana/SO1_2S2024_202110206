@@ -1935,5 +1935,16 @@
             }
         ],
         "KilledProcesses": []
+    },
+    {
+        "RAMmemory": [
+            {
+                "totalram": 7715,
+                "freeram": 623,
+                "usedram": 7092,
+                "timestamp": "2024-09-08 23:20:48"
+            }
+        ],
+        "KilledProcesses": []
     }
 ]

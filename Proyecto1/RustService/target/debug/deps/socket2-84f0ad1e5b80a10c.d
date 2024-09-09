@@ -1,0 +1,11 @@
+/home/julio/Escritorio/LAB_SOPES1/SO1_2S2024_202110206/Proyecto1/RustService/target/debug/deps/libsocket2-84f0ad1e5b80a10c.rmeta: /home/julio/.cargo/registry/src/index.crates.io-6f17d22bba15001f/socket2-0.5.7/src/lib.rs /home/julio/.cargo/registry/src/index.crates.io-6f17d22bba15001f/socket2-0.5.7/src/sockaddr.rs /home/julio/.cargo/registry/src/index.crates.io-6f17d22bba15001f/socket2-0.5.7/src/socket.rs /home/julio/.cargo/registry/src/index.crates.io-6f17d22bba15001f/socket2-0.5.7/src/sockref.rs /home/julio/.cargo/registry/src/index.crates.io-6f17d22bba15001f/socket2-0.5.7/src/sys/unix.rs
+
+/home/julio/Escritorio/LAB_SOPES1/SO1_2S2024_202110206/Proyecto1/RustService/target/debug/deps/libsocket2-84f0ad1e5b80a10c.rlib: /home/julio/.cargo/registry/src/index.crates.io-6f17d22bba15001f/socket2-0.5.7/src/lib.rs /home/julio/.cargo/registry/src/index.crates.io-6f17d22bba15001f/socket2-0.5.7/src/sockaddr.rs /home/julio/.cargo/registry/src/index.crates.io-6f17d22bba15001f/socket2-0.5.7/src/socket.rs /home/julio/.cargo/registry/src/index.crates.io-6f17d22bba15001f/socket2-0.5.7/src/sockref.rs /home/julio/.cargo/registry/src/index.crates.io-6f17d22bba15001f/socket2-0.5.7/src/sys/unix.rs
+
+/home/julio/Escritorio/LAB_SOPES1/SO1_2S2024_202110206/Proyecto1/RustService/target/debug/deps/socket2-84f0ad1e5b80a10c.d: /home/julio/.cargo/registry/src/index.crates.io-6f17d22bba15001f/socket2-0.5.7/src/lib.rs /home/julio/.cargo/registry/src/index.crates.io-6f17d22bba15001f/socket2-0.5.7/src/sockaddr.rs /home/julio/.cargo/registry/src/index.crates.io-6f17d22bba15001f/socket2-0.5.7/src/socket.rs /home/julio/.cargo/registry/src/index.crates.io-6f17d22bba15001f/socket2-0.5.7/src/sockref.rs /home/julio/.cargo/registry/src/index.crates.io-6f17d22bba15001f/socket2-0.5.7/src/sys/unix.rs
+
+/home/julio/.cargo/registry/src/index.crates.io-6f17d22bba15001f/socket2-0.5.7/src/lib.rs:
+/home/julio/.cargo/registry/src/index.crates.io-6f17d22bba15001f/socket2-0.5.7/src/sockaddr.rs:
+/home/julio/.cargo/registry/src/index.crates.io-6f17d22bba15001f/socket2-0.5.7/src/socket.rs:
+/home/julio/.cargo/registry/src/index.crates.io-6f17d22bba15001f/socket2-0.5.7/src/sockref.rs:
+/home/julio/.cargo/registry/src/index.crates.io-6f17d22bba15001f/socket2-0.5.7/src/sys/unix.rs:

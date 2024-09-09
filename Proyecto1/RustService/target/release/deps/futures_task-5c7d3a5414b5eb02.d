@@ -1,0 +1,10 @@
+/home/julio/Escritorio/LAB_SOPES1/SO1_2S2024_202110206/Proyecto1/RustService/target/release/deps/libfutures_task-5c7d3a5414b5eb02.rmeta: /home/julio/.cargo/registry/src/index.crates.io-6f17d22bba15001f/futures-task-0.3.30/src/lib.rs /home/julio/.cargo/registry/src/index.crates.io-6f17d22bba15001f/futures-task-0.3.30/src/spawn.rs /home/julio/.cargo/registry/src/index.crates.io-6f17d22bba15001f/futures-task-0.3.30/src/future_obj.rs /home/julio/.cargo/registry/src/index.crates.io-6f17d22bba15001f/futures-task-0.3.30/src/noop_waker.rs
+
+/home/julio/Escritorio/LAB_SOPES1/SO1_2S2024_202110206/Proyecto1/RustService/target/release/deps/libfutures_task-5c7d3a5414b5eb02.rlib: /home/julio/.cargo/registry/src/index.crates.io-6f17d22bba15001f/futures-task-0.3.30/src/lib.rs /home/julio/.cargo/registry/src/index.crates.io-6f17d22bba15001f/futures-task-0.3.30/src/spawn.rs /home/julio/.cargo/registry/src/index.crates.io-6f17d22bba15001f/futures-task-0.3.30/src/future_obj.rs /home/julio/.cargo/registry/src/index.crates.io-6f17d22bba15001f/futures-task-0.3.30/src/noop_waker.rs
+
+/home/julio/Escritorio/LAB_SOPES1/SO1_2S2024_202110206/Proyecto1/RustService/target/release/deps/futures_task-5c7d3a5414b5eb02.d: /home/julio/.cargo/registry/src/index.crates.io-6f17d22bba15001f/futures-task-0.3.30/src/lib.rs /home/julio/.cargo/registry/src/index.crates.io-6f17d22bba15001f/futures-task-0.3.30/src/spawn.rs /home/julio/.cargo/registry/src/index.crates.io-6f17d22bba15001f/futures-task-0.3.30/src/future_obj.rs /home/julio/.cargo/registry/src/index.crates.io-6f17d22bba15001f/futures-task-0.3.30/src/noop_waker.rs
+
+/home/julio/.cargo/registry/src/index.crates.io-6f17d22bba15001f/futures-task-0.3.30/src/lib.rs:
+/home/julio/.cargo/registry/src/index.crates.io-6f17d22bba15001f/futures-task-0.3.30/src/spawn.rs:
+/home/julio/.cargo/registry/src/index.crates.io-6f17d22bba15001f/futures-task-0.3.30/src/future_obj.rs:
+/home/julio/.cargo/registry/src/index.crates.io-6f17d22bba15001f/futures-task-0.3.30/src/noop_waker.rs:
