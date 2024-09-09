@@ -11,6 +11,7 @@ use tokio::signal::ctrl_c;
 use std::sync::{Arc, Mutex};
 use tokio::time::sleep;
 use std::time::Duration;
+use std::os::unix::process::ExitStatusExt;
 
 
 /* 
@@ -185,20 +186,48 @@ impl PartialOrd for Process {
     - id: El identificador del contenedor que se quiere matar.
     - Regresa un std::process::Output que contiene la salida del comando que se ejecutó.
 */
-fn kill_container(id: &str) -> std::process::Output {
-    let  output = std::process::Command::new("sudo")
-        .arg("docker")
-        .arg("stop")
-        .arg(id)
-        .output()
-        .expect("failed to execute process");
+fn kill_container(id: &str, contenedor_python: &str) -> std::process::Output {
+    if id == contenedor_python {
+        println!("El contenedor de Python no debe ser eliminado: {}", contenedor_python);
+        
+        // Retornamos una salida simulada para no ejecutar un proceso vacío.
+        std::process::Output {
+            status: std::process::ExitStatus::from_raw(0), // Estado de salida 0 significa éxito
+            stdout: vec![],
+            stderr: vec![],
+        }
 
-    println!("Matando contenedor con id: {}", id);
-
-    output
+    } else {
+        let output = std::process::Command::new("sudo")
+            .arg("docker")
+            .arg("stop")
+            .arg(id)
+            .output()
+            .expect("Failed to execute process");
+        
+        println!("Matando contenedor con ID: {}", id);
+        output
+    }
 }
 
-async fn analyzer( system_info:  SystemInfo) {
+
+
+fn receptor(system_info: SystemInfo) -> String {
+    let processes_list = system_info.processes;
+    
+    for process in processes_list {
+        // Obtener el ID del contenedor de Python (suponiendo que el proceso se llama containerd-shim y coincide con el patrón)
+        if process.name == "containerd-shim" {
+            let container_id = process.get_container_id().to_string();
+            println!("ID del contenedor de Python: {}", container_id);
+            return container_id; // Retornamos el ID del contenedor de Python
+        }
+    }
+    String::new() // Retorna cadena vacía si no encuentra el contenedor
+}
+
+
+async fn analyzer( system_info:  SystemInfo, contenedor_python: &str) {
 
 
     // Creamos un vector vacío para guardar los logs de los procesos.
@@ -238,7 +267,7 @@ async fn analyzer( system_info:  SystemInfo) {
 
     println!("*-*-*-*-*-*-*-*-*-*-*-*-*-Alto consumo*-*-*-*-*-*-*-*-*-*-*-*-*-");
     for process in highest_list {
-        println!("PID: {}, Name: {}, Icontainer ID {}, Vsz : {}, Rss : {} , Memory Usage: {}, CPU Usage: {}", process.pid, process.name, process.get_container_id(), process.vsz, process.rss, process.memory_usage, process.cpu_usage);
+        println!("PID: {}, Name: {}, container ID: {}, Vsz : {}, Rss : {} , Memory Usage: {}, CPU Usage: {}", process.pid, process.name, process.get_container_id(), process.vsz, process.rss, process.memory_usage, process.cpu_usage);
     }
 
     println!("------------------------------");
@@ -268,7 +297,7 @@ async fn analyzer( system_info:  SystemInfo) {
             log_proc_list.push(log_process.clone());
 
             // Matamos el contenedor.
-            let _output = kill_container(&process.get_container_id());
+            let _output = kill_container(&process.get_container_id(), contenedor_python);
 
         }
     } 
@@ -293,11 +322,15 @@ async fn analyzer( system_info:  SystemInfo) {
                 memory_usage: process.memory_usage,
                 cpu_usage: process.cpu_usage
             };
-    
-            log_proc_list.push(log_process.clone());
+            
+            if log_process.container_id == contenedor_python {
+                println!("No se envía log de contenedor");
+            } else {
+                log_proc_list.push(log_process.clone());
+            }
 
             // Matamos el contenedor.
-            let _output = kill_container(&process.get_container_id());
+            let _output = kill_container(&process.get_container_id(), contenedor_python);
 
         }
     }
@@ -422,8 +455,62 @@ fn parse_proc_to_struct(json_str: &str) -> Result<SystemInfo, serde_json::Error>
 }
 
 
+fn docker_compose() -> std::process::Output {
+    let output = std::process::Command::new("bash")
+        .arg("/home/julio/Escritorio/LAB_SOPES1/SO1_2S2024_202110206/Proyecto1/RustService/dockercompose.sh")
+        .output()
+        .expect("failed to execute process");
+
+    if output.status.success() {
+        println!("Servicio Python iniciado correctamente");
+    } else {
+        eprintln!(
+            "Error al iniciar el servicio Python: {}",
+            String::from_utf8_lossy(&output.stderr)
+        );
+    }
+
+    output
+}
+
+fn docker_compose_down() -> std::process::Output {
+    let output = std::process::Command::new("bash")
+        .arg("/home/julio/Escritorio/LAB_SOPES1/SO1_2S2024_202110206/Proyecto1/RustService/dockercomposedown.sh")
+        .output()
+        .expect("failed to execute process");
+
+    if output.status.success() {
+        println!("Servicio Python Parado correctamente");
+    } else {
+        eprintln!(
+            "Error al parar el servicio Python: {}",
+            String::from_utf8_lossy(&output.stderr)
+        );
+    }
+
+    output
+}
+
+
 #[tokio::main]
 async fn main() {
+
+    // Necesito ejecutar el docker compose, y leer el archivo de sysinfo_202110206, para obtener el id del ÚNICO Proceso que tendría que haber, ese ID será
+    // super necesario para poder verificar en la función kill_container, que no mate ese proceso, y siga vivo el contenedor/proceso en todo el momento de vida del servicio.
+
+    // Iniciar docker-compose y obtener el ID del contenedor de Python
+    docker_compose();
+    // Creamos una estructura de datos SystemInfo 
+    let init_info: SystemInfo;
+
+    let json_init_str = read_proc_file("sysinfo_202110206").unwrap();
+
+    init_info = parse_proc_to_struct(&json_init_str).expect("Failed to parse JSON");
+    
+    // Obtener el ID del contenedor de Python
+    let contenedor_python_id = receptor(init_info);
+
+
     let loop_active = Arc::new(Mutex::new(true));
 
     let loop_active_clone = Arc::clone(&loop_active);
@@ -469,6 +556,7 @@ async fn main() {
             }
         }
 
+        docker_compose_down();
         // Terminar el proceso
         let mut active = loop_active_clone.lock().unwrap();
         *active = false;
@@ -488,12 +576,12 @@ async fn main() {
         // Dependiendo de si se pudo deserializar el contenido del archivo proc o no, se ejecuta una u otra rama.
         match system_info {
             Ok(info) => {
-                analyzer(info).await; // Aquí se espera el futuro
+                analyzer(info, &contenedor_python_id).await; // Aquí se espera el futuro
             }
             Err(e) => println!("Failed to parse JSON: {}", e),
         }
 
-        // Dormimos el hilo principal por 10 segundos.
-        sleep(Duration::from_secs(10)).await; // await también para sleep
+        // Dormir por 10 segundos
+        sleep(Duration::from_secs(10)).await;
     }
 }
