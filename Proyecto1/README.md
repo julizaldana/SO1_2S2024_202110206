@@ -200,6 +200,7 @@ Este es el programa que contiene el funcionamiento más importante detrás del [
 2. Main: Controla, y realiza primer el docker compose del servidor python, luego la lectura, captura el id, luego realiza ya las iteraciones para los ordenamientos y eliminacion de contenedores, y mandar esa informacion al server python.
 
 ![alt text](./Images/main.png)
+
 ____
 
 #### **<div align="center">Servidor en Python y Graficador</div>**
