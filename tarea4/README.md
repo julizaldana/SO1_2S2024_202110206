@@ -6,36 +6,59 @@ ___
 
 Para la tarea #4 del laboratorio del curso de Sistemas Operativos 1, se desplegó la aplicación de NGINX, utilizando Google Kubernetes Engine (GKE) en Google Cloud Platform (GCP).
 
+### **INSTALACIÓN GOOGLE SDK**
+
+```bash
+curl -O https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-cli-linux-x86_64.tar.gz
+
+tar -xf google-cloud-cli-linux-x86_64.tar.gz
+
+./google-cloud-sdk/install.sh
+```
+
+![alt text](./images/sdk1.png)
+
+![alt text](./images/sdk2.png)
+
+Con el siguiente comando, se realiza la autenticación con la cuenta de Google Cloud.
+
+```bash
+./google-cloud-sdk/bin/gcloud init
+```
+
+![alt text](./images/autenticacion.png)
+
+NOTA: Se debe de tener instalado:
+
+1. **gcloud:** viene con el SDK de Google Cloud.
+2. **kubectl:** es la herramienta que interactúa con tu clúster de Kubernetes.
+
+____
+
+Se habilita el Kubernetes Engine API 
+
+![alt text](./images/apie.png)
 
 
+Genera un clúster de Kubernetes en GKE.
 
+![alt text](./images/crear_cluster.png)
 
+![alt text](./images/kube_cluster.png)
 
+Despliega NGINX en el clúster y expón el servicio utilizando un LoadBalancer.
 
+* Se crea un archivo nginx-deployment-service.yaml:
 
+![alt text](./images/yaml.png)
 
+![alt text](./images/service_c.png)
 
+Verifica que el servidor NGINX esté funcionando al acceder a la IP pública del servicio.
 
+![alt text](image.png)
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+![alt text](image-1.png)
 
 _____
 
@@ -147,3 +170,4 @@ ______
 
 - https://kubernetes.io/docs/concepts/overview/components/
 - https://kubernetes.io/docs/concepts/architecture/
+- https://cloud.google.com/sdk/docs/install-sdk?hl=es-419#linux
