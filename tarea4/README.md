@@ -6,7 +6,9 @@ ___
 
 Para la tarea #4 del laboratorio del curso de Sistemas Operativos 1, se desplegó la aplicación de NGINX, utilizando Google Kubernetes Engine (GKE) en Google Cloud Platform (GCP).
 
-### **INSTALACIÓN GOOGLE SDK**
+### <div align="center">INSTALACIÓN GOOGLE SDK</div>
+
+Se utilizaron los comandos:
 
 ```bash
 curl -O https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-cli-linux-x86_64.tar.gz
@@ -35,30 +37,44 @@ NOTA: Se debe de tener instalado:
 
 ____
 
-Se habilita el Kubernetes Engine API 
+### <div align="center">Creación Servicio NGINX en GKE</div>
+
+1. Se habilita el Kubernetes Engine API 
 
 ![alt text](./images/apie.png)
 
 
-Genera un clúster de Kubernetes en GKE.
+2. Se genera un clúster de Kubernetes en GKE.
 
 ![alt text](./images/crear_cluster.png)
 
 ![alt text](./images/kube_cluster.png)
 
-Despliega NGINX en el clúster y expón el servicio utilizando un LoadBalancer.
 
-* Se crea un archivo nginx-deployment-service.yaml:
+3. Se crea un archivo nginx-deployment-service.yaml:
 
-![alt text](./images/yaml.png)
+```bash
+nano nginx-deployment-service.yaml
+```
 
-![alt text](./images/service_c.png)
+![alt text](./images/deployment-service.png)
 
-Verifica que el servidor NGINX esté funcionando al acceder a la IP pública del servicio.
+![alt text](./images/nginx_deploy.png)
 
-![alt text](image.png)
+```bash
+kubectl apply -f nginx-deployment-service.yaml
+```
 
-![alt text](image-1.png)
+Se despliega NGINX en el clúster y se expone el servicio utilizando un LoadBalancer.
+
+![alt text](./images/load_balancer.png)
+
+Se verifica que el servidor NGINX esté funcionando al acceder a la IP 
+#### **Visualización página NGINX**
+
+*Dirección:* http://34.44.106.164/
+
+![alt text](./images/visualizacion_nginx.png)
 
 _____
 
@@ -171,3 +187,4 @@ ______
 - https://kubernetes.io/docs/concepts/overview/components/
 - https://kubernetes.io/docs/concepts/architecture/
 - https://cloud.google.com/sdk/docs/install-sdk?hl=es-419#linux
+- https://www.youtube.com/watch?v=gP-vmWwGBbg&t=6s
