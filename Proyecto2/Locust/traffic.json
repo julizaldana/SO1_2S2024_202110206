@@ -1,0 +1,19 @@
+[{
+    "name": "Julio Zaldaña",
+    "age": 21,
+    "faculty": "Ingeniería",
+    "discipline": 2
+},
+{
+    "name": "Jayron Zaldaña",
+    "age": 62,
+    "faculty": "Agronomía",
+    "discipline": 3
+},
+{
+    "name": "Javier López",
+    "age": 29,
+    "faculty": "Agronomía",
+    "discipline": 1
+}
+]
