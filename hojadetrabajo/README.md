@@ -55,7 +55,9 @@ _____
 4. **Locust:** Se ejecuta Locust localmente para enviar peticiones hacia la aplicación Golang en Kubernetes a través del Ingress.
 
 
-Comando para crear cluster
+Se configurar reglas de firewall para habilitar tráfico externo de entrada.
+
+Comando para crear cluster:
 
 ```bash
 gcloud container clusters create ht-locust-golang   --zone us-central1-a   --num-nodes 3
@@ -67,6 +69,7 @@ gcloud container clusters create ht-locust-golang   --zone us-central1-a   --num
 Comandos para desplegar en Kubernetes:
 
 ```bash
+kubectl apply -f namespace.yaml
 kubectl apply -f deployment.yaml
 kubectl apply -f service.yaml
 kubectl apply -f ingress.yaml
@@ -81,29 +84,37 @@ kubectl logs -f <name_pod>
 1. Usar NGINX controller con Helm: 
 
 ```bash
-kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/main/deploy/static/provider/cloud/deploy.yaml
+curl https://baltocdn.com/helm/signing.asc | gpg --dearmor | sudo tee /usr/share/keyrings/helm.gpg > /dev/null
+sudo apt-get install apt-transport-https --yes
+echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/helm.gpg] https://baltocdn.com/helm/stable/debian/ all main" | sudo tee /etc/apt/sources.list.d/helm-stable-debian.list
+sudo apt-get update
+sudo apt-get install helm
 ```
 
-2. Ejecutar Locust, de forma local:
+2. Crear ingress para poder enviar peticiones
+
+```bash
+kubectl create ns nginx-ingress
+helm repo add ingress-nginx https://kubernetes.github.io/ingress-nginx 
+helm repo update 
+helm install nginx-ingress ingress-nginx/ingress-nginx -n nginx-ingress
+kubectl get services -n nginx-ingress # Se obtiene la IP Load Balancer, la misma de INGRESS
+```
+
+3. Ejecutar Locust, de forma local:
 
 ![alt text](./images/localhost.png)
 
-3. Se obtiene la ip address de Ingress para conectarse a Locust.
+4. Se obtiene la ip address de Ingress para conectarse a Locust localmente.
 
-![alt text](./images/ingress.png)
+![alt text](./images/ingress2.png)
 
-Editar el archivo /etc/hosts, para colocar la ip address dentro de la configuración.
+![alt text](./images/locustv2.png)
 
-![alt text](./images/etc.png)
-
-![alt text](./images/locust.png)
-
-Se ingresa el host en Locust: http://34.102.151.219
+Se ingresa el host en Locust: http://34.42.158.60 (Es la IP del balanceador de carga)
 
 Se obtiene el "nombre" de un pod (existen 2 replicas), para ver los logs en tiempo real, del programa de golang.
 
-![alt text](./images/pods.png)
-
 Y se inicializa el proceso en Locust, para enviar tráfico.
 
-![alt text](./images/traffic.png)
+![alt text](./images/trafico%20.png)

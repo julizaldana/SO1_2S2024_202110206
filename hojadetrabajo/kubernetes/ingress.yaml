@@ -2,18 +2,17 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: go-app-ingress
-  annotations:
-    kubernetes.io/ingress.class: "nginx" # Asegúrate de que el controlador de NGINX esté instalado.
-    nginx.ingress.kubernetes.io/rewrite-target: /
+  labels:
+    name: go-app-ingress
 spec:
+  ingressClassName: nginx
   rules:
-  - host: go-app.local
-    http:
-      paths:
-      - path: /
-        pathType: Prefix
-        backend:
-          service:
-            name: go-app-service
-            port:
-              number: 8080
+    - http:
+        paths:
+        - path: /
+          pathType: Prefix
+          backend:
+            service:
+              name: go-app-service
+              port:
+                number: 8080
