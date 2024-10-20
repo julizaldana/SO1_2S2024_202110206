@@ -45,6 +45,7 @@ docker push juliozaldana/go-container:latest
 
 ![alt text](./images/dockerhub.png)
 
+_____
 
 ### <div align="center">RESUMEN DE FLUJO EN GKE</div>
 
@@ -53,8 +54,17 @@ docker push juliozaldana/go-container:latest
 3. **Ingress:** Proporciona acceso externo al servicio a través de un controlador Ingress.
 4. **Locust:** Se ejecuta Locust localmente para enviar peticiones hacia la aplicación Golang en Kubernetes a través del Ingress.
 
-Comandos para desplegar en Kubernetes:
 
+Comando para crear cluster
+
+```bash
+gcloud container clusters create ht-locust-golang   --zone us-central1-a   --num-nodes 3
+```
+
+![alt text](./images/cluster.png)
+
+
+Comandos para desplegar en Kubernetes:
 
 ```bash
 kubectl apply -f deployment.yaml
@@ -62,9 +72,38 @@ kubectl apply -f service.yaml
 kubectl apply -f ingress.yaml
 ```
 
-
 Verificar los logs en tiempo real, del contenedor golang en un pod.
 
 ```bash
 kubectl logs -f <name_pod>
 ```
+
+1. Usar NGINX controller con Helm: 
+
+```bash
+kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/main/deploy/static/provider/cloud/deploy.yaml
+```
+
+2. Ejecutar Locust, de forma local:
+
+![alt text](./images/localhost.png)
+
+3. Se obtiene la ip address de Ingress para conectarse a Locust.
+
+![alt text](./images/ingress.png)
+
+Editar el archivo /etc/hosts, para colocar la ip address dentro de la configuración.
+
+![alt text](./images/etc.png)
+
+![alt text](./images/locust.png)
+
+Se ingresa el host en Locust: http://34.102.151.219
+
+Se obtiene el "nombre" de un pod (existen 2 replicas), para ver los logs en tiempo real, del programa de golang.
+
+![alt text](./images/pods.png)
+
+Y se inicializa el proceso en Locust, para enviar tráfico.
+
+![alt text](./images/traffic.png)

@@ -3,6 +3,7 @@ kind: Ingress
 metadata:
   name: go-app-ingress
   annotations:
+    kubernetes.io/ingress.class: "nginx" # Asegúrate de que el controlador de NGINX esté instalado.
     nginx.ingress.kubernetes.io/rewrite-target: /
 spec:
   rules:
