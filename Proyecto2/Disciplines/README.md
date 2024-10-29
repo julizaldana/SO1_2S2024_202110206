@@ -11,3 +11,4 @@
 
 * Envía información por gRPC a kafka.
 
+* Son publishers/producers a kafka.

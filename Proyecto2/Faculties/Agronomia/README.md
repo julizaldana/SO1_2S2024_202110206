@@ -11,3 +11,16 @@
 
 * Envía información por gRPC a contenedores de disciplinas.
 
+
+#### Subir imagen a Docker Hub
+
+```bash
+# Construir la imagen 
+docker build -t juliozaldana/agronomia-go-container:v1 .
+
+# Iniciar sesión en Docker Hub
+docker login
+
+# Subir la imagen con la etiqueta v1
+docker push juliozaldana/agronomia-go-container:v1
+```
