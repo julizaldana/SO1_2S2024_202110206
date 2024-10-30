@@ -63,7 +63,30 @@ kubectl apply -f goatletismo.yaml
 
 #### 3. Kafka
 
+Se utiliza kafka, para el envío y recepción de datos/mensajes en forma de colas.
 
+Se instala Strimzi en el namespace creado del proyecto:
+
+```bash
+kubectl create -f 'https://strimzi.io/install/latest?namespace=sopes1' -n sopes1
+
+# Desplegar el cluster de kafka 
+
+kubectl apply -f https://strimzi.io/examples/latest/kafka/kafka-persistent-single.yaml -n sopes1
+
+# Aplicar topicos definidos en el archivo kafka-topics.yaml
+kubectl apply -f kafka-topics.yaml -n sopes1
+```
+
+```bash
+# Se puede utilizar para verificar el pod de kafka, para ver mensajes
+kubectl exec -it my-cluster-kafka-0 -n sopes1 -- /bin/bash
+
+# Se puede verificar los mensajes recibidos en los topicos, winners o losers.
+
+/opt/kafka/bin/kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic winners --from-beginning
+/opt/kafka/bin/kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic losers --from-beginning
+```
 
 #### 4. Consumidores Kafka - Redis
 
