@@ -13,7 +13,15 @@ import (
 )
 
 var (
-	addr = flag.String("addr", "localhost:50051", "the address to connect to")
+	addr = flag.String("addr", "go-boxeo:50051", "the address to connect to")
+)
+
+var (
+	addr1 = flag.String("addr", "go-atletismo:50051", "the address to connect to")
+)
+
+var (
+	addr2 = flag.String("addr", "go-natacion:50051", "the address to connect to")
 )
 
 type Student struct {
@@ -89,7 +97,7 @@ func sendData(fiberCtx *fiber.Ctx) error {
 
 func main() {
 	app := fiber.New()
-	app.Post("/faculty", sendData)
+	app.Post("/agronomia", sendData)
 
 	log.Println("Starting server on port 8080...")
 	err := app.Listen(":8080")

@@ -11,3 +11,13 @@
 
 * Envía información por gRPC a contenedores de disciplinas.
 
+```bash
+# Construir la imagen 
+docker build -t juliozaldana/ingenieria-rust-container:v4 .
+
+# Iniciar sesión en Docker Hub
+docker login
+
+# Subir la imagen con la etiqueta v1
+docker push juliozaldana/ingenieria-rust-container:v4
+```

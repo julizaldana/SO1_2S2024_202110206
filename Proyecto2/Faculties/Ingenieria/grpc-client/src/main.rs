@@ -16,7 +16,7 @@ struct StudentData {
 }
 
 async fn handle_student(student: web::Json<StudentData>) -> impl Responder {
-    let mut client = match StudentClient::connect("http://localhost:50051").await {
+    let mut client = match StudentClient::connect("http://go-boxeo:50051").await {
         Ok(client) => client,
         Err(e) => return HttpResponse::InternalServerError().body(format!("Failed to connect to gRPC server: {}", e)),
     };
@@ -43,15 +43,16 @@ async fn handle_student(student: web::Json<StudentData>) -> impl Responder {
 
 #[actix_web::main]
 async fn main() -> std::io::Result<()> {
-    println!("Starting server at http://localhost:8080");
+    println!("Starting server at http://0.0.0.0:8080");
     HttpServer::new(|| {
         App::new()
-            .route("/faculty", web::post().to(handle_student))
+            .route("/ingenieria", web::post().to(handle_student))
     })
-    .bind("127.0.0.1:8080")?
+    .bind("0.0.0.0:8080")? // Cambia "127.0.0.1" por "0.0.0.0"
     .run()
     .await
 }
+
 /* #[tokio::main]
 async fn main() -> Result<(), Box<dyn std::error::Error>> {
     let mut client = StudentClient::connect("http://[::1]:50051").await?;

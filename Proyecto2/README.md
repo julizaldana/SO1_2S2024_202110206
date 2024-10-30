@@ -7,3 +7,67 @@ ___
 
 #### **<div align="center">Introducción</div>**
 
+
+
+
+____
+
+
+#### **<div align="center">Comandos de Kubernetes</div>**
+
+Creación de reglas de firewall de entrada y salida.
+
+Instalación de Helm y NGINX-Ingress-Controller para poder facilitar la entrada de tráfico en la arquitectura.
+
+#### 1. Ingress
+
+Permite la entrada de tráfico, mediante Locust
+
+
+```bash
+# Aplicar ingress
+
+kubectl apply -f ingress.yaml
+```
+
+
+#### 2. Facultades
+
+- Aplicación de Deployment y Service 
+
+```bash
+# AGRONOMIA
+kubectl apply -f goclient.yaml
+
+# INGENIERIA
+kubectl apply -f rustclient.yaml
+```
+
+
+#### 2. Disciplinas
+
+- Aplicación de Deployment y Service
+
+```bash
+# NATACION
+kubectl apply -f gonatacion.yaml
+
+# BOXEO
+kubectl apply -f goboxeo.yaml
+
+# ATLETISMO
+kubectl apply -f goatletismo.yaml
+```
+
+
+
+#### 3. Kafka
+
+
+
+#### 4. Consumidores Kafka - Redis
+
+
+
+
+#### 5. Grafana - Prometheus
