@@ -13,11 +13,11 @@
 
 ```bash
 # Construir la imagen 
-docker build -t juliozaldana/ingenieria-rust-container:v4 .
+docker build -t juliozaldana/ingenieria-rust-container:v5 .
 
 # Iniciar sesión en Docker Hub
 docker login
 
 # Subir la imagen con la etiqueta v1
-docker push juliozaldana/ingenieria-rust-container:v4
+docker push juliozaldana/ingenieria-rust-container:v5
 ```

@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: grpc-client-rust
-        image: juliozaldana/ingenieria-rust-container:v4
+        image: juliozaldana/ingenieria-rust-container:v5
         resources:
           limits:
             memory: "128Mi"

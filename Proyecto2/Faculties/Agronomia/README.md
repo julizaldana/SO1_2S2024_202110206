@@ -21,12 +21,12 @@ protoc --go_out=. --go-grpc_out=. client.proto
 
 ```bash
 # Construir la imagen 
-docker build -t juliozaldana/agronomia-go-container:v2 .
+docker build -t juliozaldana/agronomia-go-container:v3 .
 
 # Iniciar sesión en Docker Hub
 docker login
 
 # Subir la imagen con la etiqueta v1
-docker push juliozaldana/agronomia-go-container:v2
+docker push juliozaldana/agronomia-go-container:v3
 ```
 

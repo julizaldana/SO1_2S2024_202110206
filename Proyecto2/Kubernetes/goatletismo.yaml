@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: grpc-server-atletismo
-        image: alvarog1318/server-go:latest
+        image: juliozaldana/boxeo-go-container:v1
         resources:
           limits:
             memory: "128Mi"

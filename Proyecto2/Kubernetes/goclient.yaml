@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: grpc-client-go
-        image: juliozaldana/agronomia-go-container:v2
+        image: juliozaldana/agronomia-go-container:v3
         resources:
           limits:
             memory: "128Mi"

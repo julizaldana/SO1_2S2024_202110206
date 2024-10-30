@@ -13,15 +13,9 @@ import (
 )
 
 var (
-	addr = flag.String("addr", "go-boxeo:50051", "the address to connect to")
-)
-
-var (
-	addr1 = flag.String("addr", "go-atletismo:50051", "the address to connect to")
-)
-
-var (
-	addr2 = flag.String("addr", "go-natacion:50051", "the address to connect to")
+	addrBoxeo     = flag.String("addrBoxeo", "go-boxeo:50051", "the address for Boxeo server")
+	addrAtletismo = flag.String("addrAtletismo", "go-atletismo:50051", "the address for Atletismo server")
+	addrNatacion  = flag.String("addrNatacion", "go-natacion:50051", "the address for Natacion server")
 )
 
 type Student struct {
@@ -35,32 +29,41 @@ func sendData(fiberCtx *fiber.Ctx) error {
 	var body Student
 	if err := fiberCtx.BodyParser(&body); err != nil {
 		log.Println("Error parsing request body:", err)
-		return fiberCtx.Status(400).JSON(fiber.Map{
-			"error": err.Error(),
-		})
+		return fiberCtx.Status(400).JSON(fiber.Map{"error": err.Error()})
 	}
 
 	// Log to confirm receipt of data
 	log.Printf("Received student data: %+v\n", body)
 
+	// Select gRPC server based on discipline
+	var addr string
+	switch body.Discipline {
+	case 1:
+		addr = *addrNatacion
+	case 2:
+		addr = *addrAtletismo
+	case 3:
+		addr = *addrBoxeo
+	default:
+		return fiberCtx.Status(400).JSON(fiber.Map{"error": "Invalid discipline"})
+	}
+
 	// Set up a connection to the gRPC server.
-	conn, err := grpc.Dial(*addr, grpc.WithTransportCredentials(insecure.NewCredentials()))
+	conn, err := grpc.Dial(addr, grpc.WithTransportCredentials(insecure.NewCredentials()))
 	if err != nil {
 		log.Fatalf("Failed to connect to gRPC server: %v", err)
 	}
 	defer conn.Close()
 	c := pb.NewStudentClient(conn)
 
-	// Create a channel to receive the response and error
+	// Create channels to receive the response and error
 	responseChan := make(chan *pb.StudentResponse)
 	errorChan := make(chan error)
-	go func() {
 
-		// Set up a context with a timeout
+	go func() {
 		ctx, cancel := context.WithTimeout(context.Background(), time.Second)
 		defer cancel()
 
-		// Send the request to the gRPC server
 		r, err := c.GetStudent(ctx, &pb.StudentRequest{
 			Name:       body.Name,
 			Age:        int32(body.Age),
@@ -79,19 +82,13 @@ func sendData(fiberCtx *fiber.Ctx) error {
 	select {
 	case response := <-responseChan:
 		log.Printf("gRPC response: %v\n", response.GetSuccess())
-		return fiberCtx.JSON(fiber.Map{
-			"message": response.GetSuccess(),
-		})
+		return fiberCtx.JSON(fiber.Map{"message": response.GetSuccess()})
 	case err := <-errorChan:
 		log.Println("Error from gRPC server:", err)
-		return fiberCtx.Status(500).JSON(fiber.Map{
-			"error": err.Error(),
-		})
+		return fiberCtx.Status(500).JSON(fiber.Map{"error": err.Error()})
 	case <-time.After(5 * time.Second):
 		log.Println("Request to gRPC server timed out")
-		return fiberCtx.Status(500).JSON(fiber.Map{
-			"error": "timeout",
-		})
+		return fiberCtx.Status(500).JSON(fiber.Map{"error": "timeout"})
 	}
 }
 
@@ -100,8 +97,7 @@ func main() {
 	app.Post("/agronomia", sendData)
 
 	log.Println("Starting server on port 8080...")
-	err := app.Listen(":8080")
-	if err != nil {
+	if err := app.Listen(":8080"); err != nil {
 		log.Fatalf("Failed to start server: %v", err)
 	}
 }
