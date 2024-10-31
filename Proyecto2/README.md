@@ -88,9 +88,21 @@ kubectl exec -it my-cluster-kafka-0 -n sopes1 -- /bin/bash
 /opt/kafka/bin/kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic losers --from-beginning
 ```
 
-#### 4. Consumidores Kafka - Redis
+#### 4. Consumidores Kafka 
+
+Los consumidores recibirán los mensajes de los tópicos de kafka, para insertarlos en redis.
+
+```bash
+# TOPIC: WINNERS
+kubectl apply -f consumer-winners.yaml
+
+# TOPIC: LOSERS
+kubectl apply -f consumer-losers.yaml
+```
+
+
+#### 5. Redis
 
 
 
-
-#### 5. Grafana - Prometheus
+#### 6. Grafana - Prometheus
