@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: winners-consumer
-        image: juliozaldana/winners-go-consumer:v1
+        image: juliozaldana/winners-go-consumer:v3
         resources:
           limits:
             cpu: "0.4"

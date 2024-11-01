@@ -104,5 +104,38 @@ kubectl apply -f consumer-losers.yaml
 #### 5. Redis
 
 
+Agregar el repositorio de Helm para Redis:
+
+```bash
+helm repo add bitnami https://charts.bitnami.com/bitnami
+helm repo update
+```
+Instalar redis con helm.
+
+```bash
+helm install redis-db bitnami/redis --namespace sopes1 --create-namespace
+```
+Verificar contraseña de redis.
+
+```bash
+export REDIS_PASSWORD=$(kubectl get secret --namespace sopes1 redis-db -o jsonpath="{.data.redis-password}" | base64 -d)
+echo $REDIS_PASSWORD
+```
+
+**Verficar en pods de redis, si se guarda info**
+
+```bash
+kubectl exec -it redis-db-master-0 --namespace sopes1 -- redis-cli
+
+AUTH PAJRLlnnPn
+
+# Verificar todas las claves de ganadores
+KEYS "winner:*"
+
+# Acceder a los datos de un estudiante específico
+HGETALL "winner:nombre"
+```
 
 #### 6. Grafana - Prometheus
+
+

@@ -5,16 +5,31 @@ import (
 	"encoding/json"
 	"fmt"
 	"log"
+	"time"
+
+	"golang-consumer/redis"
 
 	"github.com/segmentio/kafka-go"
 )
 
-// Estructura de los datos que recibirás, aquí podrías ajustarlo si sabes el formato exacto de los mensajes
-type Student struct {
-	Name       string `json:"name"`
-	Age        int    `json:"age"`
-	Faculty    string `json:"faculty"`
-	Discipline int    `json:"discipline"`
+func processEvent(event []byte) {
+
+	// unmarshal the data
+	var student redis.Student
+	err := json.Unmarshal(event, &student)
+	if err != nil {
+		fmt.Printf("Failed to unmarshal message: %s", err)
+		return
+	}
+
+	// Create a log object
+	log := redis.Log{
+		Data:      student,
+		CreatedAt: time.Now().String(),
+	}
+
+	// save on redis
+	go redis.InsertLoser(log)
 }
 
 func main() {
@@ -41,13 +56,16 @@ func main() {
 		}
 
 		// Imprime el mensaje recibido en Kafka
-		var student Student
+		var student redis.Student
 		if err := json.Unmarshal(m.Value, &student); err != nil {
 			log.Printf("Error al deserializar el mensaje: %v\n", err)
 			continue
 		}
 
 		fmt.Printf("Mensaje recibido en el topic '%s' (offset %d): %v\n", topic, m.Offset, student)
+
+		// Process the event
+		processEvent(m.Value)
 
 		// Confirmación de que el mensaje fue leído
 		if err := r.CommitMessages(context.Background(), m); err != nil {
