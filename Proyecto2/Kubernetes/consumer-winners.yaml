@@ -4,7 +4,6 @@ metadata:
   name: winners-consumer
   namespace: sopes1
 spec:
-  replicas: 2
   selector:
     matchLabels:
       app: winners-consumer
@@ -15,8 +14,8 @@ spec:
     spec:
       containers:
       - name: winners-consumer
-        image: juliozaldana/winners-go-consumer:v3
+        image: juliozaldana/winners-go-consumer:v4
         resources:
           limits:
-            cpu: "0.4"
-            memory: "700Mi"
+            cpu: "0.1"
+            memory: "128Mi"

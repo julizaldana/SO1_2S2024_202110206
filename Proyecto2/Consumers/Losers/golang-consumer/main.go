@@ -5,7 +5,6 @@ import (
 	"encoding/json"
 	"fmt"
 	"log"
-	"time"
 
 	"golang-consumer/redis"
 
@@ -14,7 +13,7 @@ import (
 
 func processEvent(event []byte) {
 
-	// unmarshal the data
+	// Unmarshal the data
 	var student redis.Student
 	err := json.Unmarshal(event, &student)
 	if err != nil {
@@ -22,14 +21,8 @@ func processEvent(event []byte) {
 		return
 	}
 
-	// Create a log object
-	log := redis.Log{
-		Data:      student,
-		CreatedAt: time.Now().String(),
-	}
-
-	// save on redis
-	go redis.InsertLoser(log)
+	// Save in Redis directly using the student object
+	go redis.InsertLoser(student)
 }
 
 func main() {

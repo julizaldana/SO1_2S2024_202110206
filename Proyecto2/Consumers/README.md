@@ -13,14 +13,14 @@
 
 ```bash
 # Construir las imagenes de consumidores golang
-docker build -t juliozaldana/winners-go-consumer:v3 .
-docker build -t juliozaldana/losers-go-consumer:v2 .
+docker build -t juliozaldana/winners-go-consumer:v4 .
+docker build -t juliozaldana/losers-go-consumer:v3 .
 
 # Iniciar sesión en Docker Hub
 docker login
 
-# Subir la imagen con la etiqueta v2
-docker push juliozaldana/winners-go-consumer:v3
-docker push juliozaldana/losers-go-consumer:v2
+# Subir la imagen con la etiqueta respectiva
+docker push juliozaldana/winners-go-consumer:v4
+docker push juliozaldana/losers-go-consumer:v3
 ```
 

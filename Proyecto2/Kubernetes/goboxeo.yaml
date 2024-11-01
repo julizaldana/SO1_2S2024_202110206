@@ -14,11 +14,11 @@ spec:
     spec:
       containers:
       - name: grpc-server-boxeo
-        image: juliozaldana/boxeo-go-container:v1
+        image: juliozaldana/boxeo-go-container:v2
         resources:
           limits:
             memory: "128Mi"
-            cpu: "0.3"
+            cpu: "0.1"
         ports:
         - containerPort: 50051
 ---

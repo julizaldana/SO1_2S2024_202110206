@@ -13,6 +13,30 @@ ___
 ____
 
 
+#### **<div align="center">Configuracion Inicial GKE</div>**
+
+Se configuran reglas de firewall para habilitar tráfico externo de entrada y de salida.
+
+![alt text](./Images/firewall.png)
+
+Comando para crear cluster:
+
+```bash
+gcloud container clusters create proyecto2-202110206 \
+    --zone us-central1-a \
+    --num-nodes 5 \
+    --disk-type=pd-standard \
+    --disk-size=100
+```
+
+![alt text](./Images/cluster.png)
+
+```bash
+# Aplicar namespace
+
+kubectl apply -f namespace.yaml
+```
+
 #### **<div align="center">Comandos de Kubernetes</div>**
 
 Creación de reglas de firewall de entrada y salida.
@@ -22,6 +46,28 @@ Instalación de Helm y NGINX-Ingress-Controller para poder facilitar la entrada 
 #### 1. Ingress
 
 Permite la entrada de tráfico, mediante Locust
+
+Usar NGINX controller con Helm: 
+
+```bash
+curl https://baltocdn.com/helm/signing.asc | gpg --dearmor | sudo tee /usr/share/keyrings/helm.gpg > /dev/null
+sudo apt-get install apt-transport-https --yes
+echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/helm.gpg] https://baltocdn.com/helm/stable/debian/ all main" | sudo tee /etc/apt/sources.list.d/helm-stable-debian.list
+sudo apt-get update
+sudo apt-get install helm
+```
+
+Para crear ingress para poder enviar peticiones, se utiliza nginx-ingress.
+
+```bash
+kubectl create ns nginx-ingress
+helm repo add ingress-nginx https://kubernetes.github.io/ingress-nginx 
+helm repo update 
+helm install nginx-ingress ingress-nginx/ingress-nginx -n nginx-ingress
+kubectl get services -n nginx-ingress # Se obtiene la IP Load Balancer, la misma de INGRESS
+```
+
+Se ingresa el host en Locust: http://34.57.51.101.nip.io (Es la IP del balanceador de carga)
 
 
 ```bash
@@ -127,7 +173,7 @@ echo $REDIS_PASSWORD
 ```bash
 kubectl exec -it redis-db-master-0 --namespace sopes1 -- redis-cli
 
-AUTH PAJRLlnnPn
+AUTH XKcuMbTOcn
 
 # Verificar todas las claves de ganadores
 KEYS "winner:*"
@@ -137,5 +183,25 @@ HGETALL "winner:nombre"
 ```
 
 #### 6. Grafana - Prometheus
+
+Se usa helm para instalar grafana y prometheus.
+Se exponen los puertos, para poder acceder.
+
+```bash
+ACCOUNT=$(gcloud info --format='value(config.account)')
+kubectl create clusterrolebinding owner-cluster-admin-binding \
+    --clusterrole cluster-admin \
+    --user $ACCOUNT
+
+helm repo add prometheus-community https://prometheus-community.github.io/helm-charts
+helm repo update
+
+helm install my-kube-prometheus-stack prometheus-community/kube-prometheus-stack
+
+
+kubectl expose service my-kube-prometheus-stack-prometheus --type=NodePort --target-port=9090 --name=prometheus-node-port-service
+
+kubectl expose service my-kube-prometheus-stack-grafana --type=NodePort --target-port=3000 --name=grafana-node-port-service
+```
 
 

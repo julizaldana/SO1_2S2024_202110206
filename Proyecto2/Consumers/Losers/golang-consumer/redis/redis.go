@@ -17,7 +17,7 @@ func Connect2Redis() *redis.Client {
 	port := "6379"
 	client := redis.NewClient(&redis.Options{
 		Addr:     host + ":" + port,
-		Password: "PAJRLlnnPn", // Reemplaza con la contraseña de Redis decodificada
+		Password: "XKcuMbTOcn", // Reemplaza con la contraseña de Redis decodificada
 	})
 
 	return client
