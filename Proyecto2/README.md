@@ -37,6 +37,20 @@ Se configuran reglas de firewall para habilitar tráfico externo de entrada y de
 
 ![alt text](./Images/firewall.png)
 
+* **ALLIN**
+
+<div align="center">
+<img src=./Images/in.png width=350>
+</div>
+
+
+* **ALLOUT**
+
+<div align="center">
+<img src=./Images/out.png width=350>
+</div>
+
+
 Comando para crear cluster:
 
 ```bash
@@ -92,10 +106,12 @@ Permite la entrada de tráfico, mediante Locust, que publicará automaticamente,
 2. "/ingenieria"
 
 <div align="center">
-<img src=./Locust/image.png width=450>
+<img src=./Locust/locust.png width=450>
 </div>
 
-Usar NGINX controller con Helm: 
+Usar NGINX controller con Helm.
+
+Se instala HELM localmente:
 
 ```bash
 curl https://baltocdn.com/helm/signing.asc | gpg --dearmor | sudo tee /usr/share/keyrings/helm.gpg > /dev/null
@@ -314,12 +330,65 @@ http://35.226.117.187:32425
 PROMETHEUS:
 http://35.226.117.187:32519
 
-#### VISUALIZACION
+____
+
+### Conectarse a Redis en Grafana
+
+Ya habiendo iniciado sesión en Grafana, uno puedo conectarse, accediendo en las opciones de new connection, hay que agregar a Redis. (Instalar si no se tiene y luego se tiene que añadir un nuevo data source.)
+
+<div align="center">
+<img src=./Images/add.png width=550>
+</div>
+
+
+Al crear un nuevo Data Source, se debe de ingresar la dirección de redis y su contraseña (esta se encuentra en el cluster, en este caso sería:)
+
+Address: redis-db-master.sopes1.svc.cluster.local:6379
+Password: XKcuMbTOcn
+
+<div align="center">
+<img src=./Images/redisf.png width=650>
+</div>
+
+Ya se tiene conectado a la base de datos de Redis, y ya se podrán construir consultas para crear visualizaciones.
+
+<div align="center">
+<img src=./Images/conn.png width=650>
+</div>
+
+Se pueden crear queries en Grafana y se puede obtener la información almacenada en la base de datos de Redis:
+
+Por ejemplo para obtener un contador creado en Redis:
+
+- HGET "nombre_contador" "valor"
+
+En este caso se tiene un contador que se crea desde los consumers; y se puede obtener la informacion del conteo de estudiantes por facultad; en este caso en Grafana se hace el query de la siguiente forma:
+
+- HGET "new_faculty_count" "Agronomia"
+- HGET "new_faculty_count" "Ingenieria" 
+
+Se obtendrían los contadores tanto para Agronomia como para Ingenieria.
+
+![alt text](./Images/query.png)
+
+____
+
+#### VISUALIZACION FINAL 
 
 **Grafana:**
+
+Esta sería la visualización final del dashboard creado para el Sistema de OLIMPIADAS USAC; se puede observar:
+
+- Conteo de alumnos por facultad.
+- Conteo de ganadores y perdedores por facultad.
+- Conteo de ganadores y perdedores por disciplina.
 
 ![alt text](./Images/graph1.png)
 
 **Prometheus:**
+
+Con Prometheus se pueden utilizar templates creados en la comunidad, en este caso se utilizó el siguiente, para poder visualizar y monitorizar el rendimiento del cpu, memoria y trafico de red, en cada nodo del clúster de kubernetes.
+
+https://grafana.com/grafana/dashboards/1860-node-exporter-full/
 
 ![alt text](./Images/graph2.png)
