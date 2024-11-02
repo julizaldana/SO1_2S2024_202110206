@@ -42,9 +42,14 @@ func InsertWinner(student Student) {
 		log.Println("Winner saved on Redis ->", studentKey)
 	}
 
-	// Incrementar un contador para el conteo por facultad
-	client.HIncrBy(context.Background(), "faculty_count", student.Faculty, 1)
+	// CONTADORES FINALES
 
-	// Incrementar un contador para el conteo por disciplina
-	client.HIncrBy(context.Background(), "discipline_count", fmt.Sprint(student.Discipline), 1)
+	// Incrementar un contador para el conteo por facultad
+	client.HIncrBy(context.Background(), "new_faculty_count", student.Faculty, 1)
+
+	// Incrementar un contador específico para el conteo de ganadores por disciplina
+	client.HIncrBy(context.Background(), "new_winner_discipline_count", fmt.Sprint(student.Discipline), 1)
+
+	// Incrementar un contador para el conteo por facultad
+	client.HIncrBy(context.Background(), "new_winner_faculty_count", student.Faculty, 1)
 }
